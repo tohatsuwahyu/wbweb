@@ -22,12 +22,12 @@
   </script>
 
   <style>
-    body { background-color: #0f172a; color: #f8fafc; } /* Dark mode premium look */
+    body { background-color: #0f172a; color: #f8fafc; overflow-x: hidden;}
     .glass-nav { background: rgba(15, 23, 42, 0.8); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(255,255,255,0.1); }
     .glass-card { background: rgba(30, 41, 59, 0.7); backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.1); border-radius: 1.5rem; }
     .gradient-text { background: linear-gradient(135deg, #60a5fa, #a78bfa); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
     
-    .input-dark { width: 100%; background: #0f172a; border: 1px solid #334155; border-radius: 0.75rem; padding: 0.75rem 1rem; color: white; outline: none; }
+    .input-dark { width: 100%; background: #0f172a; border: 1px solid #334155; border-radius: 0.75rem; padding: 0.75rem 1rem; color: white; outline: none; transition: all 0.3s;}
     .input-dark:focus { border-color: #3b82f6; box-shadow: 0 0 0 2px rgba(59,130,246,0.3); }
     
     .slider-container { position: relative; width: 100%; height: 300px; border-radius: 1.5rem; overflow: hidden; background: #1e293b; }
@@ -39,10 +39,10 @@
 <body class="antialiased selection:bg-brand-600 selection:text-white pb-20">
 
   <!-- NAVBAR -->
-  <nav class="fixed top-0 w-full z-50 glass-nav h-20 flex items-center justify-between px-6 lg:px-12">
+  <nav class="fixed top-0 w-full z-50 glass-nav h-20 flex items-center justify-between px-4 lg:px-12">
     <div class="flex items-center gap-3">
       <div class="w-10 h-10 bg-brand-600 rounded-xl flex items-center justify-center font-black text-white text-xl shadow-lg shadow-brand-600/50">W</div>
-      <h1 class="text-xl font-black tracking-widest uppercase">WINGBEND</h1>
+      <h1 class="text-xl font-black tracking-widest uppercase hidden sm:block">WINGBEND</h1>
     </div>
     <div class="flex items-center gap-4">
       <select id="langSelect" class="bg-slate-800 text-white border border-slate-700 rounded-lg px-3 py-1 text-sm font-bold outline-none cursor-pointer hover:border-brand-500 transition-colors">
@@ -50,7 +50,7 @@
         <option value="ja">日本語</option>
         <option value="id">ID</option>
       </select>
-      <a href="#cad-magnet" class="hidden md:block bg-white text-slate-900 px-5 py-2 rounded-full font-black text-sm hover:scale-105 transition-transform" data-i18n="navBtn">Get CAD Files</a>
+      <a href="#contact-routing" class="hidden md:block bg-white text-slate-900 px-5 py-2 rounded-full font-black text-sm hover:scale-105 transition-transform" data-i18n="navBtn">Contact Support</a>
     </div>
   </nav>
 
@@ -67,7 +67,7 @@
       </p>
     </section>
 
-    <!-- SHOWCASE: BEFORE AFTER (DIGITAL MARKETING MAGNET) -->
+    <!-- SHOWCASE: BEFORE AFTER -->
     <section class="glass-card p-6 lg:p-10 flex flex-col lg:flex-row gap-10 items-center">
       <div class="w-full lg:w-1/2">
         <h3 class="text-3xl font-black mb-4" data-i18n="showcaseTitle">See The Difference</h3>
@@ -80,24 +80,22 @@
       </div>
       <div class="w-full lg:w-1/2">
         <div class="slider-container">
-          <!-- Gunakan gambar pabrik yang sesungguhnya nanti -->
           <img src="https://images.unsplash.com/photo-1565514020179-026b92b2d08a?q=80&w=800&auto=format&fit=crop" class="slider-img" alt="With WingBend">
           <div class="slider-clip" id="beforeImage">
             <img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?q=80&w=800&auto=format&fit=crop" class="slider-img" style="width: 200%; max-width: none;" alt="Standard V-Die">
           </div>
           <input type="range" min="0" max="100" value="50" class="slider-input" id="compareSlider">
-          <div class="absolute top-4 left-4 bg-red-500 text-white text-xs font-black px-2 py-1 rounded">Standard V-Die</div>
-          <div class="absolute top-4 right-4 bg-brand-500 text-white text-xs font-black px-2 py-1 rounded">WingBend</div>
+          <div class="absolute top-4 left-4 bg-red-500 text-white text-xs font-black px-2 py-1 rounded shadow-md pointer-events-none">Standard V-Die</div>
+          <div class="absolute top-4 right-4 bg-brand-500 text-white text-xs font-black px-2 py-1 rounded shadow-md pointer-events-none">WingBend</div>
         </div>
       </div>
     </section>
 
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-      
       <!-- TOOL 1: MODEL SELECTOR -->
       <section class="glass-card p-6 lg:p-10 border-t-4 border-brand-500">
         <div class="flex items-center gap-4 mb-6 border-b border-slate-700 pb-4">
-          <div class="w-12 h-12 rounded-xl bg-brand-900 flex items-center justify-center text-brand-400">🔧</div>
+          <div class="w-12 h-12 rounded-xl bg-brand-900 flex items-center justify-center text-brand-400 text-xl">🔧</div>
           <h3 class="text-2xl font-black" data-i18n="tool1Title">Model Selector</h3>
         </div>
         <div class="space-y-6">
@@ -122,10 +120,10 @@
         </div>
       </section>
 
-      <!-- TOOL 2: TONNAGE CALCULATOR (MARKETING HOOK) -->
+      <!-- TOOL 2: TONNAGE CALCULATOR -->
       <section class="glass-card p-6 lg:p-10 border-t-4 border-emerald-500">
         <div class="flex items-center gap-4 mb-6 border-b border-slate-700 pb-4">
-          <div class="w-12 h-12 rounded-xl bg-emerald-900/50 flex items-center justify-center text-emerald-400">⚡</div>
+          <div class="w-12 h-12 rounded-xl bg-emerald-900/50 flex items-center justify-center text-emerald-400 text-xl">⚡</div>
           <h3 class="text-2xl font-black" data-i18n="tool2Title">Tonnage Calculator</h3>
         </div>
         <div class="space-y-6">
@@ -149,25 +147,38 @@
       </section>
     </div>
 
-    <!-- LEAD MAGNET SECTION -->
-    <section id="cad-magnet" class="glass-card p-10 text-center bg-gradient-to-br from-slate-800 to-slate-900 relative overflow-hidden">
-      <div class="absolute top-0 right-0 w-64 h-64 bg-brand-600 rounded-full blur-[100px] opacity-20 -translate-y-1/2 translate-x-1/2"></div>
-      <div class="relative z-10 max-w-lg mx-auto">
-        <h3 class="text-3xl font-black mb-2" data-i18n="leadTitle">Download CAD Models</h3>
-        <p class="text-slate-400 text-sm mb-6" data-i18n="leadDesc">Get 2D/3D DXF files for your engineering simulations. Free for professionals.</p>
-        <form id="leadForm" class="space-y-3">
-          <input type="text" id="leadName" required placeholder="Name" class="input-dark text-sm">
-          <input type="text" id="leadCompany" required placeholder="Company Name" class="input-dark text-sm">
-          <input type="email" id="leadEmail" required placeholder="Corporate Email" class="input-dark text-sm">
-          <button type="submit" class="w-full bg-brand-600 text-white font-black py-3 rounded-xl hover:bg-brand-500 transition-colors shadow-lg shadow-brand-600/30 uppercase tracking-widest text-sm" data-i18n="leadBtn">Request Files</button>
-        </form>
-        <div id="leadMsg" class="mt-4 text-emerald-400 font-bold text-sm hidden">Request sent successfully! Check your email.</div>
-      </div>
+    <!-- CONTACT ROUTING FORM -->
+    <section id="contact-routing" class="glass-card p-8 lg:p-12 mb-10 border-t-4 border-purple-500 bg-gradient-to-br from-slate-800 to-slate-900 relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-64 h-64 bg-purple-600 rounded-full blur-[100px] opacity-20 -translate-y-1/2 translate-x-1/2"></div>
+        <div class="relative z-10 max-w-2xl mx-auto text-center">
+            <h3 class="text-3xl font-black mb-2" data-i18n="contactTitle">Contact & Support</h3>
+            <p class="text-slate-400 text-sm mb-8" data-i18n="contactDesc">Direct your inquiry to the right department for a faster response.</p>
+            
+            <form id="contactForm" class="space-y-4 text-left">
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <input type="text" id="contactName" required placeholder="Your Name" class="input-dark text-sm">
+                <input type="email" id="contactEmail" required placeholder="Corporate Email" class="input-dark text-sm">
+              </div>
+              <select id="contactDept" class="input-dark text-sm cursor-pointer font-bold">
+                <option value="sales">Sales & Pricing Inquiry</option>
+                <option value="technical">Engineering & Technical Support</option>
+                <option value="general">General Inquiry</option>
+              </select>
+              <textarea id="contactMsg" required rows="4" placeholder="How can we help you?" class="input-dark text-sm resize-none"></textarea>
+              <button type="submit" class="w-full bg-purple-600 text-white font-black py-4 rounded-xl hover:bg-purple-500 transition-colors shadow-lg shadow-purple-600/30 uppercase tracking-widest text-sm" data-i18n="contactBtn">Send Message</button>
+            </form>
+            <div id="contactResMsg" class="mt-4 text-emerald-400 font-bold text-sm hidden bg-emerald-900/30 py-3 rounded-lg border border-emerald-500/30">Message sent successfully! Our team will respond shortly.</div>
+        </div>
     </section>
   </main>
 
-  <!-- CHATBOT WIDGET -->
-  <button id="aiOpenBtn" class="fixed right-6 bottom-6 z-[70] w-16 h-16 rounded-full bg-brand-600 text-white shadow-[0_10px_25px_rgba(37,99,235,0.4)] flex items-center justify-center hover:scale-110 active:scale-95 transition-all duration-300 border-2 border-slate-800 group">
+  <!-- TOMBOL WHATSAPP (KIRI BAWAH) -->
+  <a href="https://wa.me/818021409299" target="_blank" class="fixed left-6 bottom-6 z-[70] w-14 h-14 rounded-full bg-[#25D366] text-white shadow-[0_10px_25px_rgba(37,211,102,0.4)] flex items-center justify-center hover:scale-110 active:scale-95 transition-all duration-300 border-2 border-slate-800 hover:border-white group">
+    <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M12.031 0C5.383 0 0 5.383 0 12.031c0 2.124.553 4.195 1.604 6.014L.273 24l6.104-1.302c1.765.952 3.754 1.455 5.805 1.455 6.648 0 12.031-5.383 12.031-12.031C24.213 5.383 18.829 0 12.031 0zm0 21.84c-1.802 0-3.567-.485-5.118-1.402l-.367-.217-3.805.811.824-3.712-.238-.379C2.268 15.116 1.76 13.596 1.76 12.031c0-5.666 4.606-10.271 10.271-10.271s10.271 4.606 10.271 10.271-4.605 10.271-10.271 10.271zm5.632-7.72c-.309-.155-1.828-.899-2.112-1.002-.284-.103-.491-.155-.698.155-.207.31-.798 1.002-.979 1.209-.181.207-.362.233-.671.078-.31-.155-1.306-.481-2.486-1.53-.918-.816-1.537-1.824-1.718-2.134-.181-.31-.02-.478.136-.636.138-.14.31-.362.465-.543.155-.181.207-.31.31-.517.103-.207.052-.388-.026-.543-.078-.155-.698-1.684-.956-2.304-.251-.603-.507-.521-.698-.531-.181-.01-.388-.01-.595-.01-.207 0-.543.078-.827.388-.284.31-1.086 1.061-1.086 2.587 0 1.526 1.112 3.001 1.267 3.208.155.207 2.186 3.336 5.295 4.613.739.303 1.316.485 1.765.621.743.236 1.42.203 1.954.123.598-.09 1.828-.748 2.086-1.472.259-.724.259-1.345.181-1.472-.078-.127-.284-.207-.594-.362z"/></svg>
+  </a>
+
+  <!-- CHATBOT WIDGET (KANAN BAWAH) -->
+  <button id="aiOpenBtn" class="fixed right-6 bottom-6 z-[70] w-16 h-16 rounded-full bg-brand-600 text-white shadow-[0_10px_25px_rgba(37,99,235,0.4)] flex items-center justify-center hover:scale-110 active:scale-95 transition-all duration-300 border-2 border-slate-800 hover:border-white group">
     <svg class="w-8 h-8 group-hover:animate-pulse" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path></svg>
   </button>
 
@@ -197,39 +208,39 @@
 
   <script>
     // ==========================================
-    // 1. KONFIGURASI URL BACKEND GAS ANDA
+    // 1. URL GOOGLE APPS SCRIPT ANDA
     // ==========================================
-    const GAS_WEB_APP_URL = 'https://script.google.com/macros/s/AKfycbxlUaR7px1GiFBmNRIbELv5H2oDYnPfci5pecDgWYGkNYz-456Sy-81jC1kZnM7jvKW/exec';
+    const GAS_WEB_APP_URL = 'https://script.google.com/macros/s/AKfycbxI_jYpuYICkPkePaaOijcSTjnxa7ngQQ-Um2pF_UNr8r52ilPrdmZAtGXPn3GbrVmIcg/exec';
 
     // ==========================================
     // 2. SISTEM MULTI-BAHASA (I18N)
     // ==========================================
     const I18N = {
       en: {
-        navBtn: 'Get CAD Files', heroBadge: 'Next-Gen Press Brake Dies', heroSub: 'Eliminate polishing time and protect sensitive materials like Aluminum and Stainless Steel instantly with TOHATSU WingBend.',
+        navBtn: 'Contact Support', heroBadge: 'Next-Gen Press Brake Dies', heroSub: 'Eliminate polishing time and protect sensitive materials like Aluminum and Stainless Steel instantly with TOHATSU WingBend.',
         showcaseTitle: 'See The Difference', showcaseDesc: 'Drag the slider to see how WingBend eliminates V-die marks compared to standard bending methods.',
         b1: 'No polishing required', b2: 'Perfect for coated plates', b3: 'Reduces overall production cost',
         tool1Title: 'Model Selector', tLabel: 'Thickness (t)', rLabel: 'Inside Radius (R)',
         tool2Title: 'Tonnage Calculator', forceReq: 'Required Force',
-        leadTitle: 'Download CAD Models', leadDesc: 'Get 2D/3D DXF files for your engineering simulations. Free for professionals.', leadBtn: 'Request Files',
+        contactTitle: 'Contact & Support', contactDesc: 'Direct your inquiry to the right department for a faster response.', contactBtn: 'Send Message',
         chatTitle: 'Technical Expert', chatWelcome: 'Hello! I am the WingBend technical assistant. How can I help you today?'
       },
       ja: {
-        navBtn: 'CADダウンロード', heroBadge: '次世代プレスブレーキ金型', heroSub: 'TOHATSU WingBendで、研磨時間をなくし、アルミやステンレスなどの傷つきやすい素材を即座に保護します。',
+        navBtn: 'お問い合わせ', heroBadge: '次世代プレスブレーキ金型', heroSub: 'TOHATSU WingBendで、研磨時間をなくし、アルミやステンレスなどの傷つきやすい素材を即座に保護します。',
         showcaseTitle: '違いをご覧ください', showcaseDesc: 'スライダーをドラッグして、標準的な曲げ加工と比較してWingBendがいかにV溝跡をなくすかをご確認ください。',
         b1: '二次研磨が不要', b2: '表面処理板に最適', b3: '生産コスト全体を削減',
         tool1Title: '機種選定', tLabel: '板厚 (t)', rLabel: 'パンチ内R (R)',
         tool2Title: '必要トン数計算', forceReq: '必要曲げ荷重',
-        leadTitle: 'CADモデルダウンロード', leadDesc: 'シミュレーション用の2D/3D DXFファイルを取得できます。', leadBtn: 'ファイルをリクエスト',
+        contactTitle: 'お問い合わせ・サポート', contactDesc: '迅速な対応のため、適切な部門にお問い合わせ内容をご指定ください。', contactBtn: 'メッセージを送信',
         chatTitle: '技術専門アシスタント', chatWelcome: 'こんにちは！WingBendの技術アシスタントです。本日はどのようなご質問でしょうか？'
       },
       id: {
-        navBtn: 'Download CAD', heroBadge: 'Dies Press Brake Generasi Baru', heroSub: 'Hilangkan waktu poles dan lindungi material sensitif seperti Aluminium dan Stainless Steel secara instan dengan TOHATSU WingBend.',
+        navBtn: 'Hubungi Kami', heroBadge: 'Dies Press Brake Generasi Baru', heroSub: 'Hilangkan waktu poles dan lindungi material sensitif seperti Aluminium dan Stainless Steel secara instan dengan TOHATSU WingBend.',
         showcaseTitle: 'Lihat Perbedaannya', showcaseDesc: 'Geser slider untuk melihat bagaimana WingBend menghilangkan bekas V-die dibandingkan metode bending standar.',
         b1: 'Tanpa proses poles lanjutan', b2: 'Sempurna untuk plat coated/cat', b3: 'Menurunkan biaya produksi total',
         tool1Title: 'Kalkulator Model', tLabel: 'Tebal (t)', rLabel: 'Radius Dalam (R)',
         tool2Title: 'Kalkulator Tonase', forceReq: 'Kebutuhan Tekanan',
-        leadTitle: 'Download Model CAD', leadDesc: 'Dapatkan file DXF 2D/3D untuk simulasi engineering Anda. Gratis.', leadBtn: 'Minta File',
+        contactTitle: 'Kontak & Dukungan', contactDesc: 'Arahkan pertanyaan Anda ke departemen yang tepat agar kami bisa merespon lebih cepat.', contactBtn: 'Kirim Pesan',
         chatTitle: 'Asisten Teknis', chatWelcome: 'Halo! Saya asisten teknis WingBend. Ada yang bisa saya bantu hari ini?'
       }
     };
@@ -243,7 +254,7 @@
           else el.textContent = I18N[lang][key];
         }
       });
-      calculateModel(); // Update text limits
+      calculateModel(); 
     }
     langSelect.addEventListener('change', (e) => applyLanguage(e.target.value));
 
@@ -271,7 +282,7 @@
     function calculateTonnage() {
       const t = Number(tVal.value), uts = Number(utsVal.value), v = Number(vVal.value);
       if(v > 0) {
-        const force = (1.4 * uts * t * t) / v; // Simplified general engineering formula
+        const force = (1.4 * uts * t * t) / v; 
         document.getElementById('tonnageRes').textContent = force.toFixed(1);
       }
     }
@@ -281,30 +292,37 @@
     calculateModel(); calculateTonnage();
 
     // ==========================================
-    // 5. LEAD GENERATION FORM TO GAS
+    // 5. EMAIL ROUTING FORM (KIRIM KE GAS)
     // ==========================================
-    document.getElementById('leadForm').addEventListener('submit', async (e) => {
+    document.getElementById('contactForm').addEventListener('submit', async (e) => {
       e.preventDefault();
-      const btn = e.target.querySelector('button'); btn.textContent = 'Sending...'; btn.disabled = true;
+      const btn = e.target.querySelector('button'); 
+      btn.textContent = 'Sending...'; 
+      btn.disabled = true;
+      
       try {
         await fetch(GAS_WEB_APP_URL, {
           method: 'POST',
-          headers: {'Content-Type': 'text/plain;charset=utf-8'}, // Bypass CORS Preflight
+          headers: {'Content-Type': 'text/plain;charset=utf-8'}, // Bypass CORS
           body: JSON.stringify({
-            action: 'download_cad',
-            name: document.getElementById('leadName').value,
-            company: document.getElementById('leadCompany').value,
-            email: document.getElementById('leadEmail').value
+            action: 'send_email',
+            name: document.getElementById('contactName').value,
+            email: document.getElementById('contactEmail').value,
+            department: document.getElementById('contactDept').value,
+            message: document.getElementById('contactMsg').value
           })
         });
-        document.getElementById('leadForm').style.display = 'none';
-        document.getElementById('leadMsg').classList.remove('hidden');
-      } catch (err) { alert('Network Error'); }
-      btn.textContent = 'Request Files'; btn.disabled = false;
+        document.getElementById('contactForm').reset();
+        document.getElementById('contactResMsg').classList.remove('hidden');
+        setTimeout(() => document.getElementById('contactResMsg').classList.add('hidden'), 6000);
+      } catch (err) { alert('Terjadi kesalahan jaringan.'); }
+      
+      btn.textContent = I18N[langSelect.value].contactBtn || 'Send Message'; 
+      btn.disabled = false;
     });
 
     // ==========================================
-    // 6. CHATBOT AI TO GAS
+    // 6. CHATBOT AI LOGIC
     // ==========================================
     const aiOpen = document.getElementById('aiOpenBtn'), aiClose = document.getElementById('aiCloseBtn');
     const aiPanel = document.getElementById('aiPanel'), aiInput = document.getElementById('aiInput');
@@ -318,9 +336,9 @@
       const div = document.createElement('div');
       div.className = isUser ? 'ml-8 bg-brand-600 p-3 rounded-2xl rounded-tr-sm text-sm text-white' : 'mr-8 bg-slate-800 border border-slate-700 p-3 rounded-2xl rounded-tl-sm text-sm text-slate-200';
       
-      // Auto-Link formatter
       let safeText = text.replace(/</g, "&lt;").replace(/>/g, "&gt;");
-      safeText = safeText.replace(/(https?:\/\/[^\s]+)/g, '<a href="$1" target="_blank" class="text-blue-400 underline break-all">$1</a>');
+      safeText = safeText.replace(/\[([^\]]+)\]\((https?:\/\/[^\)]+)\)/g, '<a href="$2" target="_blank" class="text-blue-400 underline font-bold break-all">$1</a>');
+      safeText = safeText.replace(/(^|[^"'])(https?:\/\/[^\s<]+)/g, '$1<a href="$2" target="_blank" class="text-blue-400 underline font-bold break-all">$2</a>');
       safeText = safeText.replace(/\n/g, '<br>');
       
       div.innerHTML = safeText;
@@ -347,7 +365,7 @@
       try {
         const req = await fetch(GAS_WEB_APP_URL, {
           method: 'POST',
-          headers: {'Content-Type': 'text/plain;charset=utf-8'}, // Bypass CORS preflight
+          headers: {'Content-Type': 'text/plain;charset=utf-8'},
           body: JSON.stringify({ action: 'chat', message: text, context: { lang: langSelect.value } })
         });
         const res = await req.json();
@@ -358,7 +376,7 @@
 
       } catch (e) {
         document.getElementById(thinkingId).remove();
-        appendMsg('ai', "Connection failed.");
+        appendMsg('ai', "Koneksi ke Server AI gagal.");
       }
       aiSend.disabled = false; aiSend.textContent = '►';
     }
@@ -366,7 +384,7 @@
     aiSend.addEventListener('click', sendChat);
     aiInput.addEventListener('keydown', (e) => { if(e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); sendChat(); } });
 
-    // Initialize default language
+    // Inisialisasi awal
     applyLanguage('en');
   </script>
 </body>
