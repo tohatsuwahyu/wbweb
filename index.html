@@ -1,0 +1,373 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>WingBend by TOHATSU | Zero Scratch Bending</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ['"Plus Jakarta Sans"', 'Noto Sans JP', 'sans-serif'] },
+          colors: { brand: { 50: '#eff6ff', 400: '#60a5fa', 600: '#2563eb', 900: '#1e3a8a' } }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body { background-color: #0f172a; color: #f8fafc; } /* Dark mode premium look */
+    .glass-nav { background: rgba(15, 23, 42, 0.8); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(255,255,255,0.1); }
+    .glass-card { background: rgba(30, 41, 59, 0.7); backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.1); border-radius: 1.5rem; }
+    .gradient-text { background: linear-gradient(135deg, #60a5fa, #a78bfa); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    
+    .input-dark { width: 100%; background: #0f172a; border: 1px solid #334155; border-radius: 0.75rem; padding: 0.75rem 1rem; color: white; outline: none; }
+    .input-dark:focus { border-color: #3b82f6; box-shadow: 0 0 0 2px rgba(59,130,246,0.3); }
+    
+    .slider-container { position: relative; width: 100%; height: 300px; border-radius: 1.5rem; overflow: hidden; background: #1e293b; }
+    .slider-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; pointer-events: none; }
+    .slider-clip { position: absolute; inset: 0; width: 50%; height: 100%; overflow: hidden; border-right: 4px solid #3b82f6; box-shadow: 5px 0 15px rgba(0,0,0,0.5); }
+    .slider-input { position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0; cursor: ew-resize; z-index: 10; }
+  </style>
+</head>
+<body class="antialiased selection:bg-brand-600 selection:text-white pb-20">
+
+  <!-- NAVBAR -->
+  <nav class="fixed top-0 w-full z-50 glass-nav h-20 flex items-center justify-between px-6 lg:px-12">
+    <div class="flex items-center gap-3">
+      <div class="w-10 h-10 bg-brand-600 rounded-xl flex items-center justify-center font-black text-white text-xl shadow-lg shadow-brand-600/50">W</div>
+      <h1 class="text-xl font-black tracking-widest uppercase">WINGBEND</h1>
+    </div>
+    <div class="flex items-center gap-4">
+      <select id="langSelect" class="bg-slate-800 text-white border border-slate-700 rounded-lg px-3 py-1 text-sm font-bold outline-none cursor-pointer hover:border-brand-500 transition-colors">
+        <option value="en">EN</option>
+        <option value="ja">日本語</option>
+        <option value="id">ID</option>
+      </select>
+      <a href="#cad-magnet" class="hidden md:block bg-white text-slate-900 px-5 py-2 rounded-full font-black text-sm hover:scale-105 transition-transform" data-i18n="navBtn">Get CAD Files</a>
+    </div>
+  </nav>
+
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 mt-32 space-y-16">
+    
+    <!-- HERO SECTION -->
+    <section class="text-center py-10 lg:py-20">
+      <div class="inline-block px-4 py-1.5 bg-brand-900/50 border border-brand-500/30 rounded-full text-brand-400 text-xs font-black tracking-widest uppercase mb-6" data-i18n="heroBadge">Next-Gen Press Brake Dies</div>
+      <h2 class="text-5xl lg:text-7xl font-black tracking-tight mb-6 leading-tight">
+        Zero Scratches.<br> <span class="gradient-text">Ultimate Precision.</span>
+      </h2>
+      <p class="text-slate-400 text-lg lg:text-xl max-w-2xl mx-auto font-medium" data-i18n="heroSub">
+        Eliminate polishing time and protect sensitive materials like Aluminum and Stainless Steel instantly with TOHATSU WingBend.
+      </p>
+    </section>
+
+    <!-- SHOWCASE: BEFORE AFTER (DIGITAL MARKETING MAGNET) -->
+    <section class="glass-card p-6 lg:p-10 flex flex-col lg:flex-row gap-10 items-center">
+      <div class="w-full lg:w-1/2">
+        <h3 class="text-3xl font-black mb-4" data-i18n="showcaseTitle">See The Difference</h3>
+        <p class="text-slate-400 mb-6" data-i18n="showcaseDesc">Drag the slider to see how WingBend eliminates V-die marks compared to standard bending methods.</p>
+        <ul class="space-y-3 font-bold text-sm text-slate-300">
+          <li class="flex items-center gap-3"><span class="text-green-400">✔</span> <span data-i18n="b1">No polishing required</span></li>
+          <li class="flex items-center gap-3"><span class="text-green-400">✔</span> <span data-i18n="b2">Perfect for coated plates</span></li>
+          <li class="flex items-center gap-3"><span class="text-green-400">✔</span> <span data-i18n="b3">Reduces overall production cost</span></li>
+        </ul>
+      </div>
+      <div class="w-full lg:w-1/2">
+        <div class="slider-container">
+          <!-- Gunakan gambar pabrik yang sesungguhnya nanti -->
+          <img src="https://images.unsplash.com/photo-1565514020179-026b92b2d08a?q=80&w=800&auto=format&fit=crop" class="slider-img" alt="With WingBend">
+          <div class="slider-clip" id="beforeImage">
+            <img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?q=80&w=800&auto=format&fit=crop" class="slider-img" style="width: 200%; max-width: none;" alt="Standard V-Die">
+          </div>
+          <input type="range" min="0" max="100" value="50" class="slider-input" id="compareSlider">
+          <div class="absolute top-4 left-4 bg-red-500 text-white text-xs font-black px-2 py-1 rounded">Standard V-Die</div>
+          <div class="absolute top-4 right-4 bg-brand-500 text-white text-xs font-black px-2 py-1 rounded">WingBend</div>
+        </div>
+      </div>
+    </section>
+
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+      
+      <!-- TOOL 1: MODEL SELECTOR -->
+      <section class="glass-card p-6 lg:p-10 border-t-4 border-brand-500">
+        <div class="flex items-center gap-4 mb-6 border-b border-slate-700 pb-4">
+          <div class="w-12 h-12 rounded-xl bg-brand-900 flex items-center justify-center text-brand-400">🔧</div>
+          <h3 class="text-2xl font-black" data-i18n="tool1Title">Model Selector</h3>
+        </div>
+        <div class="space-y-6">
+          <div>
+            <label class="text-xs font-bold text-slate-400 uppercase tracking-widest" data-i18n="tLabel">Material Thickness (t)</label>
+            <input type="number" id="tVal" value="2.0" step="0.1" class="input-dark mt-2 text-xl font-black text-brand-400">
+          </div>
+          <div>
+            <label class="text-xs font-bold text-slate-400 uppercase tracking-widest" data-i18n="rLabel">Punch Inside Radius (R)</label>
+            <input type="number" id="rVal" value="1.0" step="0.1" class="input-dark mt-2 text-xl font-black text-brand-400">
+          </div>
+          <div class="pt-6 border-t border-slate-700 grid grid-cols-2 gap-4">
+            <div class="bg-slate-800 p-4 rounded-xl text-center border border-slate-700">
+              <div class="text-[10px] text-slate-400 font-bold uppercase mb-1">WingBend</div>
+              <div class="text-2xl font-black text-white" id="recWB">WB230</div>
+            </div>
+            <div class="bg-slate-800 p-4 rounded-xl text-center border border-slate-700">
+              <div class="text-[10px] text-slate-400 font-bold uppercase mb-1">WingBend Plus</div>
+              <div class="text-2xl font-black text-brand-400" id="recWBP">WBP230</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- TOOL 2: TONNAGE CALCULATOR (MARKETING HOOK) -->
+      <section class="glass-card p-6 lg:p-10 border-t-4 border-emerald-500">
+        <div class="flex items-center gap-4 mb-6 border-b border-slate-700 pb-4">
+          <div class="w-12 h-12 rounded-xl bg-emerald-900/50 flex items-center justify-center text-emerald-400">⚡</div>
+          <h3 class="text-2xl font-black" data-i18n="tool2Title">Tonnage Calculator</h3>
+        </div>
+        <div class="space-y-6">
+          <div class="grid grid-cols-2 gap-4">
+            <div>
+              <label class="text-[10px] font-bold text-slate-400 uppercase">Tensile Strength (kg/mm²)</label>
+              <input type="number" id="utsVal" value="45" class="input-dark mt-1 text-sm font-bold">
+            </div>
+            <div>
+              <label class="text-[10px] font-bold text-slate-400 uppercase">V-Opening (mm)</label>
+              <input type="number" id="vVal" value="12" class="input-dark mt-1 text-sm font-bold">
+            </div>
+          </div>
+          <div class="bg-emerald-900/30 p-6 rounded-2xl border border-emerald-500/30 text-center relative overflow-hidden">
+            <div class="text-xs text-emerald-400 font-black tracking-widest uppercase mb-2" data-i18n="forceReq">Required Force</div>
+            <div class="text-5xl font-black text-white flex items-baseline justify-center gap-2">
+              <span id="tonnageRes">21.0</span> <span class="text-xl text-emerald-500">Ton/m</span>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- LEAD MAGNET SECTION -->
+    <section id="cad-magnet" class="glass-card p-10 text-center bg-gradient-to-br from-slate-800 to-slate-900 relative overflow-hidden">
+      <div class="absolute top-0 right-0 w-64 h-64 bg-brand-600 rounded-full blur-[100px] opacity-20 -translate-y-1/2 translate-x-1/2"></div>
+      <div class="relative z-10 max-w-lg mx-auto">
+        <h3 class="text-3xl font-black mb-2" data-i18n="leadTitle">Download CAD Models</h3>
+        <p class="text-slate-400 text-sm mb-6" data-i18n="leadDesc">Get 2D/3D DXF files for your engineering simulations. Free for professionals.</p>
+        <form id="leadForm" class="space-y-3">
+          <input type="text" id="leadName" required placeholder="Name" class="input-dark text-sm">
+          <input type="text" id="leadCompany" required placeholder="Company Name" class="input-dark text-sm">
+          <input type="email" id="leadEmail" required placeholder="Corporate Email" class="input-dark text-sm">
+          <button type="submit" class="w-full bg-brand-600 text-white font-black py-3 rounded-xl hover:bg-brand-500 transition-colors shadow-lg shadow-brand-600/30 uppercase tracking-widest text-sm" data-i18n="leadBtn">Request Files</button>
+        </form>
+        <div id="leadMsg" class="mt-4 text-emerald-400 font-bold text-sm hidden">Request sent successfully! Check your email.</div>
+      </div>
+    </section>
+  </main>
+
+  <!-- CHATBOT WIDGET -->
+  <button id="aiOpenBtn" class="fixed right-6 bottom-6 z-[70] w-16 h-16 rounded-full bg-brand-600 text-white shadow-[0_10px_25px_rgba(37,99,235,0.4)] flex items-center justify-center hover:scale-110 active:scale-95 transition-all duration-300 border-2 border-slate-800 group">
+    <svg class="w-8 h-8 group-hover:animate-pulse" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path></svg>
+  </button>
+
+  <div id="aiPanel" class="hidden fixed right-4 bottom-28 z-[80] w-[calc(100vw-2rem)] max-w-sm h-[500px] bg-slate-900 rounded-3xl shadow-2xl border border-slate-700 overflow-hidden flex flex-col">
+    <div class="px-5 py-4 bg-slate-950 flex justify-between items-center border-b border-slate-800">
+      <div class="flex items-center gap-3">
+        <div class="w-8 h-8 bg-brand-600 rounded-lg flex items-center justify-center font-black text-xs">AI</div>
+        <div>
+          <div class="font-black text-sm text-white" data-i18n="chatTitle">Technical Expert</div>
+          <div class="text-[10px] text-emerald-400 font-bold">Online</div>
+        </div>
+      </div>
+      <button id="aiCloseBtn" class="text-slate-400 hover:text-white text-xl px-2">×</button>
+    </div>
+    <div id="aiMessages" class="flex-1 overflow-y-auto p-4 space-y-4 bg-slate-900/50">
+      <div class="mr-10 bg-slate-800 border border-slate-700 rounded-2xl rounded-tl-sm p-3 text-sm text-slate-200" data-i18n="chatWelcome">
+        Hello! I'm the WingBend technical assistant. How can I help you optimize your press brake operations today?
+      </div>
+    </div>
+    <div class="p-3 bg-slate-950 border-t border-slate-800">
+      <div class="flex gap-2">
+        <input type="text" id="aiInput" class="flex-1 bg-slate-800 border border-slate-700 rounded-xl px-3 text-sm text-white outline-none focus:border-brand-500" placeholder="Type a message...">
+        <button id="aiSendBtn" class="bg-brand-600 text-white px-4 py-2 rounded-xl font-bold text-sm">►</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // ==========================================
+    // 1. KONFIGURASI URL BACKEND GAS ANDA
+    // ==========================================
+    const GAS_WEB_APP_URL = 'https://script.google.com/macros/s/AKfycbxlUaR7px1GiFBmNRIbELv5H2oDYnPfci5pecDgWYGkNYz-456Sy-81jC1kZnM7jvKW/exec';
+
+    // ==========================================
+    // 2. SISTEM MULTI-BAHASA (I18N)
+    // ==========================================
+    const I18N = {
+      en: {
+        navBtn: 'Get CAD Files', heroBadge: 'Next-Gen Press Brake Dies', heroSub: 'Eliminate polishing time and protect sensitive materials like Aluminum and Stainless Steel instantly with TOHATSU WingBend.',
+        showcaseTitle: 'See The Difference', showcaseDesc: 'Drag the slider to see how WingBend eliminates V-die marks compared to standard bending methods.',
+        b1: 'No polishing required', b2: 'Perfect for coated plates', b3: 'Reduces overall production cost',
+        tool1Title: 'Model Selector', tLabel: 'Thickness (t)', rLabel: 'Inside Radius (R)',
+        tool2Title: 'Tonnage Calculator', forceReq: 'Required Force',
+        leadTitle: 'Download CAD Models', leadDesc: 'Get 2D/3D DXF files for your engineering simulations. Free for professionals.', leadBtn: 'Request Files',
+        chatTitle: 'Technical Expert', chatWelcome: 'Hello! I am the WingBend technical assistant. How can I help you today?'
+      },
+      ja: {
+        navBtn: 'CADダウンロード', heroBadge: '次世代プレスブレーキ金型', heroSub: 'TOHATSU WingBendで、研磨時間をなくし、アルミやステンレスなどの傷つきやすい素材を即座に保護します。',
+        showcaseTitle: '違いをご覧ください', showcaseDesc: 'スライダーをドラッグして、標準的な曲げ加工と比較してWingBendがいかにV溝跡をなくすかをご確認ください。',
+        b1: '二次研磨が不要', b2: '表面処理板に最適', b3: '生産コスト全体を削減',
+        tool1Title: '機種選定', tLabel: '板厚 (t)', rLabel: 'パンチ内R (R)',
+        tool2Title: '必要トン数計算', forceReq: '必要曲げ荷重',
+        leadTitle: 'CADモデルダウンロード', leadDesc: 'シミュレーション用の2D/3D DXFファイルを取得できます。', leadBtn: 'ファイルをリクエスト',
+        chatTitle: '技術専門アシスタント', chatWelcome: 'こんにちは！WingBendの技術アシスタントです。本日はどのようなご質問でしょうか？'
+      },
+      id: {
+        navBtn: 'Download CAD', heroBadge: 'Dies Press Brake Generasi Baru', heroSub: 'Hilangkan waktu poles dan lindungi material sensitif seperti Aluminium dan Stainless Steel secara instan dengan TOHATSU WingBend.',
+        showcaseTitle: 'Lihat Perbedaannya', showcaseDesc: 'Geser slider untuk melihat bagaimana WingBend menghilangkan bekas V-die dibandingkan metode bending standar.',
+        b1: 'Tanpa proses poles lanjutan', b2: 'Sempurna untuk plat coated/cat', b3: 'Menurunkan biaya produksi total',
+        tool1Title: 'Kalkulator Model', tLabel: 'Tebal (t)', rLabel: 'Radius Dalam (R)',
+        tool2Title: 'Kalkulator Tonase', forceReq: 'Kebutuhan Tekanan',
+        leadTitle: 'Download Model CAD', leadDesc: 'Dapatkan file DXF 2D/3D untuk simulasi engineering Anda. Gratis.', leadBtn: 'Minta File',
+        chatTitle: 'Asisten Teknis', chatWelcome: 'Halo! Saya asisten teknis WingBend. Ada yang bisa saya bantu hari ini?'
+      }
+    };
+
+    const langSelect = document.getElementById('langSelect');
+    function applyLanguage(lang) {
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (I18N[lang] && I18N[lang][key]) {
+          if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') el.placeholder = I18N[lang][key];
+          else el.textContent = I18N[lang][key];
+        }
+      });
+      calculateModel(); // Update text limits
+    }
+    langSelect.addEventListener('change', (e) => applyLanguage(e.target.value));
+
+    // ==========================================
+    // 3. BEFORE/AFTER SLIDER LOGIC
+    // ==========================================
+    const slider = document.getElementById('compareSlider');
+    const beforeImage = document.getElementById('beforeImage');
+    slider.addEventListener('input', (e) => { beforeImage.style.width = e.target.value + '%'; });
+
+    // ==========================================
+    // 4. MODEL SELECTOR & TONNAGE CALCULATOR
+    // ==========================================
+    const tVal = document.getElementById('tVal'), rVal = document.getElementById('rVal');
+    const utsVal = document.getElementById('utsVal'), vVal = document.getElementById('vVal');
+    
+    function calculateModel() {
+      const sum = Number(tVal.value) + Number(rVal.value);
+      let wb = "Out", wbp = "Out";
+      if(sum <= 2.0) wb = "WB120"; else if(sum <= 3.7) wb = "WB230"; else if(sum <= 5.6) wb = "WB350"; else if(sum <= 10) wb = "WB650";
+      if(sum <= 1.6) wbp = "WBP120"; else if(sum <= 3.3) wbp = "WBP230"; else if(sum <= 5.2) wbp = "WBP350"; else if(sum <= 9.6) wbp = "WBP650";
+      document.getElementById('recWB').textContent = wb; document.getElementById('recWBP').textContent = wbp;
+    }
+    
+    function calculateTonnage() {
+      const t = Number(tVal.value), uts = Number(utsVal.value), v = Number(vVal.value);
+      if(v > 0) {
+        const force = (1.4 * uts * t * t) / v; // Simplified general engineering formula
+        document.getElementById('tonnageRes').textContent = force.toFixed(1);
+      }
+    }
+
+    [tVal, rVal].forEach(el => el.addEventListener('input', () => { calculateModel(); calculateTonnage(); }));
+    [utsVal, vVal].forEach(el => el.addEventListener('input', calculateTonnage));
+    calculateModel(); calculateTonnage();
+
+    // ==========================================
+    // 5. LEAD GENERATION FORM TO GAS
+    // ==========================================
+    document.getElementById('leadForm').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const btn = e.target.querySelector('button'); btn.textContent = 'Sending...'; btn.disabled = true;
+      try {
+        await fetch(GAS_WEB_APP_URL, {
+          method: 'POST',
+          headers: {'Content-Type': 'text/plain;charset=utf-8'}, // Bypass CORS Preflight
+          body: JSON.stringify({
+            action: 'download_cad',
+            name: document.getElementById('leadName').value,
+            company: document.getElementById('leadCompany').value,
+            email: document.getElementById('leadEmail').value
+          })
+        });
+        document.getElementById('leadForm').style.display = 'none';
+        document.getElementById('leadMsg').classList.remove('hidden');
+      } catch (err) { alert('Network Error'); }
+      btn.textContent = 'Request Files'; btn.disabled = false;
+    });
+
+    // ==========================================
+    // 6. CHATBOT AI TO GAS
+    // ==========================================
+    const aiOpen = document.getElementById('aiOpenBtn'), aiClose = document.getElementById('aiCloseBtn');
+    const aiPanel = document.getElementById('aiPanel'), aiInput = document.getElementById('aiInput');
+    const aiSend = document.getElementById('aiSendBtn'), aiMessages = document.getElementById('aiMessages');
+
+    aiOpen.addEventListener('click', () => { aiPanel.classList.remove('hidden'); aiInput.focus(); });
+    aiClose.addEventListener('click', () => { aiPanel.classList.add('hidden'); });
+
+    function appendMsg(role, text) {
+      const isUser = role === 'user';
+      const div = document.createElement('div');
+      div.className = isUser ? 'ml-8 bg-brand-600 p-3 rounded-2xl rounded-tr-sm text-sm text-white' : 'mr-8 bg-slate-800 border border-slate-700 p-3 rounded-2xl rounded-tl-sm text-sm text-slate-200';
+      
+      // Auto-Link formatter
+      let safeText = text.replace(/</g, "&lt;").replace(/>/g, "&gt;");
+      safeText = safeText.replace(/(https?:\/\/[^\s]+)/g, '<a href="$1" target="_blank" class="text-blue-400 underline break-all">$1</a>');
+      safeText = safeText.replace(/\n/g, '<br>');
+      
+      div.innerHTML = safeText;
+      aiMessages.appendChild(div);
+      aiMessages.scrollTop = aiMessages.scrollHeight;
+    }
+
+    async function sendChat() {
+      const text = aiInput.value.trim();
+      if(!text) return;
+      
+      appendMsg('user', text);
+      aiInput.value = '';
+      aiSend.disabled = true; aiSend.textContent = '...';
+      
+      const thinkingId = 'think-' + Date.now();
+      const thinkDiv = document.createElement('div');
+      thinkDiv.id = thinkingId;
+      thinkDiv.className = 'mr-8 bg-slate-800 p-3 rounded-2xl rounded-tl-sm text-sm text-slate-500 animate-pulse';
+      thinkDiv.textContent = 'Thinking...';
+      aiMessages.appendChild(thinkDiv);
+      aiMessages.scrollTop = aiMessages.scrollHeight;
+
+      try {
+        const req = await fetch(GAS_WEB_APP_URL, {
+          method: 'POST',
+          headers: {'Content-Type': 'text/plain;charset=utf-8'}, // Bypass CORS preflight
+          body: JSON.stringify({ action: 'chat', message: text, context: { lang: langSelect.value } })
+        });
+        const res = await req.json();
+        document.getElementById(thinkingId).remove();
+        
+        if(res.success) appendMsg('ai', res.text);
+        else appendMsg('ai', "Error: " + res.error);
+
+      } catch (e) {
+        document.getElementById(thinkingId).remove();
+        appendMsg('ai', "Connection failed.");
+      }
+      aiSend.disabled = false; aiSend.textContent = '►';
+    }
+
+    aiSend.addEventListener('click', sendChat);
+    aiInput.addEventListener('keydown', (e) => { if(e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); sendChat(); } });
+
+    // Initialize default language
+    applyLanguage('en');
+  </script>
+</body>
+</html>
