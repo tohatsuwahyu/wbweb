@@ -1,10 +1,11 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <title>WingBend by TOHATSU | Zero Scratch Bending</title>
   
+  <link rel="icon" href="./tsh.png" type="image/png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
@@ -23,7 +24,7 @@
 
   <style>
     body { background-color: #0f172a; color: #f8fafc; overflow-x: hidden;}
-    .glass-nav { background: rgba(15, 23, 42, 0.8); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(255,255,255,0.1); }
+    .glass-nav { background: rgba(15, 23, 42, 0.9); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(255,255,255,0.1); }
     .glass-card { background: rgba(30, 41, 59, 0.7); backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.1); border-radius: 1.5rem; }
     .gradient-text { background: linear-gradient(135deg, #60a5fa, #a78bfa); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
     
@@ -34,6 +35,9 @@
     .slider-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; pointer-events: none; }
     .slider-clip { position: absolute; inset: 0; width: 50%; height: 100%; overflow: hidden; border-right: 4px solid #3b82f6; box-shadow: 5px 0 15px rgba(0,0,0,0.5); }
     .slider-input { position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0; cursor: ew-resize; z-index: 10; }
+
+    .gallery-img { transition: transform 0.4s ease, box-shadow 0.4s ease; border-radius: 1rem; object-fit: cover; width: 100%; aspect-ratio: 4/3; }
+    .gallery-img:hover { transform: scale(1.05); box-shadow: 0 10px 25px rgba(0,0,0,0.5); z-index: 10; }
   </style>
 </head>
 <body class="antialiased selection:bg-brand-600 selection:text-white pb-20">
@@ -41,16 +45,22 @@
   <!-- NAVBAR -->
   <nav class="fixed top-0 w-full z-50 glass-nav h-20 flex items-center justify-between px-4 lg:px-12">
     <div class="flex items-center gap-3">
-      <div class="w-10 h-10 bg-brand-600 rounded-xl flex items-center justify-center font-black text-white text-xl shadow-lg shadow-brand-600/50">W</div>
+      <div class="w-10 h-10 bg-white rounded-lg flex items-center justify-center p-1 shadow-lg">
+        <img src="./tsh.png" alt="TSH Logo" class="w-full h-full object-contain">
+      </div>
       <h1 class="text-xl font-black tracking-widest uppercase hidden sm:block">WINGBEND</h1>
     </div>
     <div class="flex items-center gap-4">
+      <div class="hidden lg:flex gap-6 mr-4 text-sm font-bold text-slate-300">
+        <a href="#engineering" class="hover:text-brand-400 transition-colors" data-i18n="navTools">Engineering Tools</a>
+        <a href="#gallery" class="hover:text-brand-400 transition-colors" data-i18n="navGallery">Gallery</a>
+        <a href="#downloads" class="hover:text-brand-400 transition-colors" data-i18n="navCatalogs">Downloads</a>
+      </div>
       <select id="langSelect" class="bg-slate-800 text-white border border-slate-700 rounded-lg px-3 py-1 text-sm font-bold outline-none cursor-pointer hover:border-brand-500 transition-colors">
         <option value="en">EN</option>
         <option value="ja">日本語</option>
         <option value="id">ID</option>
       </select>
-      <a href="#contact-routing" class="hidden md:block bg-white text-slate-900 px-5 py-2 rounded-full font-black text-sm hover:scale-105 transition-transform" data-i18n="navBtn">Contact Support</a>
     </div>
   </nav>
 
@@ -65,6 +75,10 @@
       <p class="text-slate-400 text-lg lg:text-xl max-w-2xl mx-auto font-medium" data-i18n="heroSub">
         Eliminate polishing time and protect sensitive materials like Aluminum and Stainless Steel instantly with TOHATSU WingBend.
       </p>
+      <div class="mt-8 flex justify-center gap-4">
+        <a href="#engineering" class="bg-brand-600 text-white px-8 py-3 rounded-full font-black text-sm hover:bg-brand-500 transition-colors shadow-lg shadow-brand-600/30 uppercase tracking-widest" data-i18n="btnCalc">Calculate Now</a>
+        <a href="#downloads" class="bg-slate-800 border border-slate-700 text-white px-8 py-3 rounded-full font-black text-sm hover:bg-slate-700 transition-colors uppercase tracking-widest" data-i18n="btnCatalog">Get Catalog</a>
+      </div>
     </section>
 
     <!-- SHOWCASE: BEFORE AFTER -->
@@ -73,9 +87,9 @@
         <h3 class="text-3xl font-black mb-4" data-i18n="showcaseTitle">See The Difference</h3>
         <p class="text-slate-400 mb-6" data-i18n="showcaseDesc">Drag the slider to see how WingBend eliminates V-die marks compared to standard bending methods.</p>
         <ul class="space-y-3 font-bold text-sm text-slate-300">
-          <li class="flex items-center gap-3"><span class="text-green-400">✔</span> <span data-i18n="b1">No polishing required</span></li>
-          <li class="flex items-center gap-3"><span class="text-green-400">✔</span> <span data-i18n="b2">Perfect for coated plates</span></li>
-          <li class="flex items-center gap-3"><span class="text-green-400">✔</span> <span data-i18n="b3">Reduces overall production cost</span></li>
+          <li class="flex items-center gap-3"><span class="text-brand-400">❖</span> <span data-i18n="b1">No polishing required</span></li>
+          <li class="flex items-center gap-3"><span class="text-brand-400">❖</span> <span data-i18n="b2">Perfect for coated plates</span></li>
+          <li class="flex items-center gap-3"><span class="text-brand-400">❖</span> <span data-i18n="b3">Reduces overall production cost</span></li>
         </ul>
       </div>
       <div class="w-full lg:w-1/2">
@@ -85,17 +99,68 @@
             <img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?q=80&w=800&auto=format&fit=crop" class="slider-img" style="width: 200%; max-width: none;" alt="Standard V-Die">
           </div>
           <input type="range" min="0" max="100" value="50" class="slider-input" id="compareSlider">
-          <div class="absolute top-4 left-4 bg-red-500 text-white text-xs font-black px-2 py-1 rounded shadow-md pointer-events-none">Standard V-Die</div>
+          <div class="absolute top-4 left-4 bg-slate-800 border border-slate-600 text-white text-xs font-black px-2 py-1 rounded shadow-md pointer-events-none">Standard V-Die</div>
           <div class="absolute top-4 right-4 bg-brand-500 text-white text-xs font-black px-2 py-1 rounded shadow-md pointer-events-none">WingBend</div>
         </div>
       </div>
     </section>
 
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+    <!-- GALLERY SECTION -->
+    <section id="gallery" class="py-10">
+      <div class="text-center mb-10">
+        <h3 class="text-3xl font-black mb-2" data-i18n="galTitle">Product Showcase</h3>
+        <p class="text-slate-400 text-sm" data-i18n="galDesc">Precision engineered for modern manufacturing.</p>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Ganti src dengan link gambar asli WingBend dari GDrive Anda nanti -->
+        <div class="relative group cursor-pointer">
+          <img src="https://images.unsplash.com/photo-1581092334651-ddf26d9a09d0?q=80&w=600&auto=format&fit=crop" class="gallery-img" alt="Press Brake">
+          <div class="absolute bottom-0 left-0 w-full p-4 bg-gradient-to-t from-black/90 to-transparent opacity-0 group-hover:opacity-100 transition-opacity rounded-b-xl font-bold">Press Brake Setup</div>
+        </div>
+        <div class="relative group cursor-pointer">
+          <img src="https://images.unsplash.com/photo-1565514020179-026b92b2d08a?q=80&w=600&auto=format&fit=crop" class="gallery-img" alt="Stainless Steel">
+          <div class="absolute bottom-0 left-0 w-full p-4 bg-gradient-to-t from-black/90 to-transparent opacity-0 group-hover:opacity-100 transition-opacity rounded-b-xl font-bold">Stainless Steel Bending</div>
+        </div>
+        <div class="relative group cursor-pointer">
+          <img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?q=80&w=600&auto=format&fit=crop" class="gallery-img" alt="WingBend Plus">
+          <div class="absolute bottom-0 left-0 w-full p-4 bg-gradient-to-t from-black/90 to-transparent opacity-0 group-hover:opacity-100 transition-opacity rounded-b-xl font-bold">WingBend Plus Precision</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DOWNLOAD CATALOGS SECTION -->
+    <section id="downloads" class="glass-card p-8 lg:p-12 bg-gradient-to-br from-brand-900/40 to-slate-900 border-t-4 border-brand-500">
+      <div class="text-center mb-8">
+        <h3 class="text-3xl font-black mb-2" data-i18n="dlTitle">Download Catalogs & Materials</h3>
+        <p class="text-slate-400 text-sm" data-i18n="dlDesc">Access full specifications, dimensions, and visual guides.</p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+        
+        <a href="https://drive.google.com/file/d/1oq_8Nkr5QD-O4QDaFemeIMNrnpeP_yWE/view?usp=sharing" target="_blank" class="bg-slate-800 border border-slate-700 p-6 rounded-2xl hover:bg-slate-700 hover:border-brand-500 transition-all flex items-center gap-4 group">
+          <div class="w-12 h-12 bg-brand-900/50 rounded-lg flex items-center justify-center text-brand-400 text-xl group-hover:scale-110 transition-transform">📄</div>
+          <div>
+            <h4 class="font-black text-lg text-white group-hover:text-brand-400 transition-colors">TOHATSU WingBend Catalog</h4>
+            <p class="text-xs text-slate-400 mt-1">PDF Document • Product Specs</p>
+          </div>
+        </a>
+
+        <a href="https://drive.google.com/drive/folders/1V-a3C5FS5o-5sW4AHUUNKd61_ISsK9KI?usp=sharing" target="_blank" class="bg-slate-800 border border-slate-700 p-6 rounded-2xl hover:bg-slate-700 hover:border-brand-500 transition-all flex items-center gap-4 group">
+          <div class="w-12 h-12 bg-emerald-900/50 rounded-lg flex items-center justify-center text-emerald-400 text-xl group-hover:scale-110 transition-transform">📐</div>
+          <div>
+            <h4 class="font-black text-lg text-white group-hover:text-emerald-400 transition-colors">Technical Drawings & Setup</h4>
+            <p class="text-xs text-slate-400 mt-1">Image Gallery • Installation Guide</p>
+          </div>
+        </a>
+
+      </div>
+    </section>
+
+    <!-- ENGINEERING TOOLS -->
+    <div id="engineering" class="grid grid-cols-1 lg:grid-cols-2 gap-8">
       <!-- TOOL 1: MODEL SELECTOR -->
       <section class="glass-card p-6 lg:p-10 border-t-4 border-brand-500">
         <div class="flex items-center gap-4 mb-6 border-b border-slate-700 pb-4">
-          <div class="w-12 h-12 rounded-xl bg-brand-900 flex items-center justify-center text-brand-400 text-xl">🔧</div>
+          <div class="w-12 h-12 rounded-xl bg-brand-900 flex items-center justify-center text-brand-400 text-xl">⚙️</div>
           <h3 class="text-2xl font-black" data-i18n="tool1Title">Model Selector</h3>
         </div>
         <div class="space-y-6">
@@ -185,7 +250,7 @@
   <div id="aiPanel" class="hidden fixed right-4 bottom-28 z-[80] w-[calc(100vw-2rem)] max-w-sm h-[500px] bg-slate-900 rounded-3xl shadow-2xl border border-slate-700 overflow-hidden flex flex-col">
     <div class="px-5 py-4 bg-slate-950 flex justify-between items-center border-b border-slate-800">
       <div class="flex items-center gap-3">
-        <div class="w-8 h-8 bg-brand-600 rounded-lg flex items-center justify-center font-black text-xs">AI</div>
+        <div class="w-8 h-8 bg-brand-600 rounded-lg flex items-center justify-center font-black text-xs text-white">AI</div>
         <div>
           <div class="font-black text-sm text-white" data-i18n="chatTitle">Technical Expert</div>
           <div class="text-[10px] text-emerald-400 font-bold">Online</div>
@@ -217,27 +282,39 @@
     // ==========================================
     const I18N = {
       en: {
-        navBtn: 'Contact Support', heroBadge: 'Next-Gen Press Brake Dies', heroSub: 'Eliminate polishing time and protect sensitive materials like Aluminum and Stainless Steel instantly with TOHATSU WingBend.',
+        navTools: 'Engineering Tools', navGallery: 'Gallery', navCatalogs: 'Downloads', navBtn: 'Contact Support', 
+        heroBadge: 'Next-Gen Press Brake Dies', heroSub: 'Eliminate polishing time and protect sensitive materials like Aluminum and Stainless Steel instantly with TOHATSU WingBend.',
+        btnCalc: 'Calculate Now', btnCatalog: 'Get Catalog',
         showcaseTitle: 'See The Difference', showcaseDesc: 'Drag the slider to see how WingBend eliminates V-die marks compared to standard bending methods.',
         b1: 'No polishing required', b2: 'Perfect for coated plates', b3: 'Reduces overall production cost',
+        galTitle: 'Product Showcase', galDesc: 'Precision engineered for modern manufacturing.',
+        dlTitle: 'Download Catalogs & Materials', dlDesc: 'Access full specifications, dimensions, and visual guides.',
         tool1Title: 'Model Selector', tLabel: 'Thickness (t)', rLabel: 'Inside Radius (R)',
         tool2Title: 'Tonnage Calculator', forceReq: 'Required Force',
         contactTitle: 'Contact & Support', contactDesc: 'Direct your inquiry to the right department for a faster response.', contactBtn: 'Send Message',
         chatTitle: 'Technical Expert', chatWelcome: 'Hello! I am the WingBend technical assistant. How can I help you today?'
       },
       ja: {
-        navBtn: 'お問い合わせ', heroBadge: '次世代プレスブレーキ金型', heroSub: 'TOHATSU WingBendで、研磨時間をなくし、アルミやステンレスなどの傷つきやすい素材を即座に保護します。',
+        navTools: 'エンジニアリングツール', navGallery: 'ギャラリー', navCatalogs: 'ダウンロード', navBtn: 'お問い合わせ', 
+        heroBadge: '次世代プレスブレーキ金型', heroSub: 'TOHATSU WingBendで、研磨時間をなくし、アルミやステンレスなどの傷つきやすい素材を即座に保護します。',
+        btnCalc: '今すぐ計算', btnCatalog: 'カタログ取得',
         showcaseTitle: '違いをご覧ください', showcaseDesc: 'スライダーをドラッグして、標準的な曲げ加工と比較してWingBendがいかにV溝跡をなくすかをご確認ください。',
         b1: '二次研磨が不要', b2: '表面処理板に最適', b3: '生産コスト全体を削減',
+        galTitle: '製品紹介', galDesc: '現代の製造業向けに精密設計。',
+        dlTitle: 'カタログ・資料ダウンロード', dlDesc: '詳細な仕様、寸法、ビジュアルガイドにアクセスできます。',
         tool1Title: '機種選定', tLabel: '板厚 (t)', rLabel: 'パンチ内R (R)',
         tool2Title: '必要トン数計算', forceReq: '必要曲げ荷重',
         contactTitle: 'お問い合わせ・サポート', contactDesc: '迅速な対応のため、適切な部門にお問い合わせ内容をご指定ください。', contactBtn: 'メッセージを送信',
         chatTitle: '技術専門アシスタント', chatWelcome: 'こんにちは！WingBendの技術アシスタントです。本日はどのようなご質問でしょうか？'
       },
       id: {
-        navBtn: 'Hubungi Kami', heroBadge: 'Dies Press Brake Generasi Baru', heroSub: 'Hilangkan waktu poles dan lindungi material sensitif seperti Aluminium dan Stainless Steel secara instan dengan TOHATSU WingBend.',
+        navTools: 'Kalkulator Teknis', navGallery: 'Galeri', navCatalogs: 'Unduhan', navBtn: 'Hubungi Kami', 
+        heroBadge: 'Dies Press Brake Generasi Baru', heroSub: 'Hilangkan waktu poles dan lindungi material sensitif seperti Aluminium dan Stainless Steel secara instan dengan TOHATSU WingBend.',
+        btnCalc: 'Hitung Sekarang', btnCatalog: 'Dapatkan Katalog',
         showcaseTitle: 'Lihat Perbedaannya', showcaseDesc: 'Geser slider untuk melihat bagaimana WingBend menghilangkan bekas V-die dibandingkan metode bending standar.',
         b1: 'Tanpa proses poles lanjutan', b2: 'Sempurna untuk plat coated/cat', b3: 'Menurunkan biaya produksi total',
+        galTitle: 'Galeri Produk', galDesc: 'Direkayasa secara presisi untuk manufaktur modern.',
+        dlTitle: 'Unduh Katalog & Materi', dlDesc: 'Akses spesifikasi lengkap, dimensi, dan panduan visual.',
         tool1Title: 'Kalkulator Model', tLabel: 'Tebal (t)', rLabel: 'Radius Dalam (R)',
         tool2Title: 'Kalkulator Tonase', forceReq: 'Kebutuhan Tekanan',
         contactTitle: 'Kontak & Dukungan', contactDesc: 'Arahkan pertanyaan Anda ke departemen yang tepat agar kami bisa merespon lebih cepat.', contactBtn: 'Kirim Pesan',
@@ -303,7 +380,7 @@
       try {
         await fetch(GAS_WEB_APP_URL, {
           method: 'POST',
-          headers: {'Content-Type': 'text/plain;charset=utf-8'}, // Bypass CORS
+          headers: {'Content-Type': 'text/plain;charset=utf-8'},
           body: JSON.stringify({
             action: 'send_email',
             name: document.getElementById('contactName').value,
