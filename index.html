@@ -154,6 +154,37 @@
     .chat-scrollbar::-webkit-scrollbar { width: 8px; }
     .chat-scrollbar::-webkit-scrollbar-track { background: rgba(15,23,42,.5); }
     .chat-scrollbar::-webkit-scrollbar-thumb { background: rgba(96,165,250,.4); border-radius: 999px; }
+
+    .media-frame {
+      position: relative;
+      overflow: hidden;
+      border-radius: 24px;
+      border: 1px solid rgba(148, 163, 184, .16);
+      background:
+        radial-gradient(circle at 20% 20%, rgba(59,130,246,.22), transparent 18rem),
+        linear-gradient(135deg, rgba(15,23,42,.92), rgba(30,41,59,.62));
+    }
+    .media-frame img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+    }
+    .media-placeholder {
+      min-height: 220px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 28px;
+      text-align: center;
+      color: #94a3b8;
+      font-weight: 800;
+      line-height: 1.8;
+    }
+    .gallery-card img {
+      aspect-ratio: 4 / 3;
+    }
+
     @media (max-width: 640px) {
       :root { --nav-h: 66px; }
       .premium-card { border-radius: 22px; }
@@ -180,6 +211,7 @@
       <div class="hidden lg:flex items-center gap-7 text-sm font-bold text-slate-300">
         <a href="#solution" class="hover:text-brand-300 transition-colors" data-i18n="navSolution">Solution</a>
         <a href="#tools" class="hover:text-brand-300 transition-colors" data-i18n="navTools">Engineering Tools</a>
+        <a href="#gallery" class="hover:text-brand-300 transition-colors" data-i18n="navGallery">Gallery</a>
         <a href="#resources" class="hover:text-brand-300 transition-colors" data-i18n="navResources">Resources</a>
         <a href="#contact" class="hover:text-brand-300 transition-colors" data-i18n="navContact">Contact</a>
       </div>
@@ -258,22 +290,16 @@
                   <div class="h-12 w-12 rounded-2xl bg-brand-500/15 border border-brand-400/30 flex items-center justify-center text-2xl">⚙️</div>
                 </div>
 
-                <div class="mt-8 grid grid-cols-2 gap-3">
-                  <div class="rounded-2xl bg-red-500/10 border border-red-300/20 p-4">
-                    <div class="text-xs text-red-200 font-black uppercase tracking-widest" data-i18n="beforeLabel">Before</div>
-                    <div class="mt-4 h-28 rounded-xl bg-slate-900 border border-slate-700 overflow-hidden relative">
-                      <div class="absolute inset-x-2 top-1/2 h-1 bg-red-300/80 rotate-[-6deg]"></div>
-                      <div class="absolute inset-x-5 top-[58%] h-px bg-red-200/50 rotate-[-6deg]"></div>
+                <div class="mt-8 media-frame h-[260px] sm:h-[320px]">
+                  <img src="./assets/images/hero-wingbend.webp" alt="WingBend product and bending result" onerror="this.style.display='none'; this.nextElementSibling.classList.remove('hidden');">
+                  <div class="media-placeholder hidden">
+                    <div>
+                      <div class="text-3xl mb-3">📷</div>
+                      <div data-i18n="heroImagePlaceholder">ここに WingBend の製品写真・加工写真を表示します</div>
+                      <div class="mt-2 text-xs text-slate-500">assets/images/hero-wingbend.webp</div>
                     </div>
-                    <p class="mt-3 text-xs text-slate-300" data-i18n="beforeText">V-die marks remain visible</p>
                   </div>
-                  <div class="rounded-2xl bg-emerald-500/10 border border-emerald-300/20 p-4">
-                    <div class="text-xs text-emerald-200 font-black uppercase tracking-widest" data-i18n="afterLabel">After</div>
-                    <div class="mt-4 h-28 rounded-xl bg-slate-900 border border-slate-700 overflow-hidden relative">
-                      <div class="absolute inset-x-2 top-1/2 h-1 bg-emerald-300/80 rotate-[-6deg] shadow-[0_0_20px_rgba(110,231,183,.6)]"></div>
-                    </div>
-                    <p class="mt-3 text-xs text-slate-300" data-i18n="afterText">Cleaner bending surface</p>
-                  </div>
+                  <div class="absolute left-4 top-4 rounded-full bg-slate-950/75 border border-white/10 px-4 py-2 text-xs font-black text-white backdrop-blur" data-i18n="heroImageBadge">製品・加工イメージ</div>
                 </div>
 
                 <div class="mt-5 premium-card-soft p-4">
@@ -356,6 +382,70 @@
             <li class="flex gap-3"><span class="text-gold-300">◆</span><span data-i18n="wbpPoint2">外観品質が重要な部品・顧客説明に使いやすい</span></li>
             <li class="flex gap-3"><span class="text-gold-300">◆</span><span data-i18n="wbpPoint3">最終選定はワーク形状・干渉・機械能力確認が必要です</span></li>
           </ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- APPLICATION / IMAGE GALLERY -->
+    <section id="gallery" class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-10 sm:py-16">
+      <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-5 mb-8">
+        <div>
+          <p class="text-brand-300 font-black tracking-[.22em] uppercase text-xs" data-i18n="galleryEyebrow">加工事例</p>
+          <h2 class="mt-3 text-3xl sm:text-5xl font-black tracking-tight" data-i18n="galleryTitle">写真で伝える WingBend の価値</h2>
+        </div>
+        <p class="max-w-xl text-slate-400 leading-7" data-i18n="galleryText">GitHub の assets/images フォルダに写真を入れるだけで、製品写真・取付写真・加工結果を表示できます。</p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-5">
+        <article class="premium-card overflow-hidden gallery-card">
+          <div class="media-frame rounded-none border-0">
+            <img src="./assets/images/wingbend-product.webp" alt="WingBend product detail" onerror="this.style.display='none'; this.nextElementSibling.classList.remove('hidden');">
+            <div class="media-placeholder hidden">
+              <div>
+                <div class="text-3xl mb-2">📷</div>
+                <div data-i18n="galleryPhProduct">製品写真を入れてください</div>
+                <div class="mt-2 text-xs text-slate-500">assets/images/wingbend-product.webp</div>
+              </div>
+            </div>
+          </div>
+          <div class="p-5">
+            <h3 class="text-xl font-black" data-i18n="galleryProductTitle">製品ディテール</h3>
+            <p class="mt-2 text-sm text-slate-400 leading-6" data-i18n="galleryProductText">製品形状・質感・精度感を伝える写真。</p>
+          </div>
+        </article>
+
+        <article class="premium-card overflow-hidden gallery-card">
+          <div class="media-frame rounded-none border-0">
+            <img src="./assets/images/installation.webp" alt="WingBend installation" onerror="this.style.display='none'; this.nextElementSibling.classList.remove('hidden');">
+            <div class="media-placeholder hidden">
+              <div>
+                <div class="text-3xl mb-2">📷</div>
+                <div data-i18n="galleryPhInstall">取付写真を入れてください</div>
+                <div class="mt-2 text-xs text-slate-500">assets/images/installation.webp</div>
+              </div>
+            </div>
+          </div>
+          <div class="p-5">
+            <h3 class="text-xl font-black" data-i18n="galleryInstallTitle">取付イメージ</h3>
+            <p class="mt-2 text-sm text-slate-400 leading-6" data-i18n="galleryInstallText">プレスブレーキへの装着イメージを明確にします。</p>
+          </div>
+        </article>
+
+        <article class="premium-card overflow-hidden gallery-card">
+          <div class="media-frame rounded-none border-0">
+            <img src="./assets/images/bending-result.webp" alt="WingBend bending result" onerror="this.style.display='none'; this.nextElementSibling.classList.remove('hidden');">
+            <div class="media-placeholder hidden">
+              <div>
+                <div class="text-3xl mb-2">📷</div>
+                <div data-i18n="galleryPhResult">加工結果写真を入れてください</div>
+                <div class="mt-2 text-xs text-slate-500">assets/images/bending-result.webp</div>
+              </div>
+            </div>
+          </div>
+          <div class="p-5">
+            <h3 class="text-xl font-black" data-i18n="galleryResultTitle">加工結果</h3>
+            <p class="mt-2 text-sm text-slate-400 leading-6" data-i18n="galleryResultText">曲げキズ低減の価値を写真で伝えます。</p>
+          </div>
         </article>
       </div>
     </section>
@@ -484,11 +574,11 @@
             <div class="grid sm:grid-cols-2 gap-4">
               <label>
                 <span class="text-xs font-black text-slate-400 tracking-widest uppercase" data-i18n="nameLabel">Name</span>
-                <input id="contactName" class="field mt-2" type="text" required placeholder="山田 太郎">
+                <input id="contactName" class="field mt-2" type="text" required data-i18n-placeholder="phName" placeholder="お名前">
               </label>
               <label>
                 <span class="text-xs font-black text-slate-400 tracking-widest uppercase" data-i18n="emailLabel">Email</span>
-                <input id="contactEmail" class="field mt-2" type="email" required placeholder="name@company.co.jp">
+                <input id="contactEmail" class="field mt-2" type="email" required data-i18n-placeholder="phEmail" placeholder="会社メールアドレス">
               </label>
             </div>
             <label>
@@ -501,7 +591,7 @@
             </label>
             <label>
               <span class="text-xs font-black text-slate-400 tracking-widest uppercase" data-i18n="messageLabel">Message</span>
-              <textarea id="contactMsg" class="field mt-2 min-h-[130px] resize-y" required placeholder="ご相談内容をご入力ください"></textarea>
+              <textarea id="contactMsg" class="field mt-2 min-h-[130px] resize-y" required data-i18n-placeholder="phMessage" placeholder="お問い合わせ内容をご入力ください"></textarea>
             </label>
             <button id="contactSubmit" class="btn-primary w-full px-6" type="submit" data-i18n="contactSend">Send inquiry</button>
             <div id="contactResult" class="hidden rounded-2xl border p-4 text-sm font-bold"></div>
@@ -564,87 +654,107 @@
     const GAS_WEB_APP_URL = 'https://script.google.com/macros/s/AKfycbxI_jYpuYICkPkePaaOijcSTjnxa7ngQQ-Um2pF_UNr8r52ilPrdmZAtGXPn3GbrVmIcg/exec';
 
     // ==================================================
+    // LOKASI GAMBAR DI GITHUB
+    // Upload gambar ke repository GitHub dengan struktur:
+    // /assets/images/hero-wingbend.webp
+    // /assets/images/wingbend-product.webp
+    // /assets/images/installation.webp
+    // /assets/images/bending-result.webp
+    //
+    // Catatan:
+    // - Nama file harus sama persis huruf besar/kecilnya.
+    // - Gunakan .webp agar loading cepat.
+    // - Jika gambar belum ada, website tetap tampil dengan placeholder.
+    // ==================================================
+
+    // ==================================================
     // 2) I18N
     // ==================================================
     const I18N = {
       ja: {
-        navSolution: '解決策', navTools: '技術ツール', navResources: '資料', navContact: 'お問い合わせ', navCta: '相談する',
-        heroBadge: 'Scratch-Free Bending Solution',
+        navSolution: '課題解決', navTools: '技術ツール', navGallery: '加工事例', navResources: '資料', navContact: 'お問い合わせ', navCta: '相談する',
+        heroBadge: '曲げキズを抑えるソリューション',
         heroTitleA: '曲げキズを減らし、', heroTitleB: '営業提案を強くする。',
         heroText: 'WingBend / WingBend Plus の特徴、資料、技術確認、見積説明を一つのサイトに集約。営業担当とお客様がすぐ理解できるプロフェッショナルページです。',
         heroPrimary: '型式を確認する', heroSecondary: '資料を見る',
-        statA: 'Standard line', statB: 'High precision', statC: 'Sales support',
-        simTitle: 'Scratch-Free Result', beforeLabel: 'Before', afterLabel: 'After', beforeText: 'Vダイ跡が残りやすい', afterText: 'よりきれいな曲げ面',
-        assistantMini: 'AI assistant ready', askAi: 'Ask AI', imageNote: '※ 実際の製品写真・加工写真に差し替えると、さらに信頼感が上がります。',
+        statA: '標準モデル', statB: '高精度モデル', statC: '営業支援AI',
+        simTitle: '製品・加工イメージ', beforeLabel: '従来曲げ', afterLabel: 'WingBend使用', beforeText: 'Vダイ跡が残りやすい', afterText: 'よりきれいな曲げ面',
+        assistantMini: 'AI相談できます', askAi: 'AIに聞く', imageNote: '※ 実際の製品写真・加工写真に差し替えると、さらに信頼感が上がります。',
+        heroImagePlaceholder: 'ここに WingBend の製品写真・加工写真を表示します', heroImageBadge: '製品・加工イメージ',
+        galleryEyebrow: '加工事例', galleryTitle: '写真で伝える WingBend の価値', galleryText: 'GitHub の assets/images フォルダに写真を入れるだけで、製品写真・取付写真・加工結果を表示できます。', galleryPhProduct: '製品写真を入れてください', galleryPhInstall: '取付写真を入れてください', galleryPhResult: '加工結果写真を入れてください', galleryProductTitle: '製品ディテール', galleryProductText: '製品形状・質感・精度感を伝える写真。', galleryInstallTitle: '取付イメージ', galleryInstallText: 'プレスブレーキへの装着イメージを明確にします。', galleryResultTitle: '加工結果', galleryResultText: '曲げキズ低減の価値を写真で伝えます。',
         problem1Title: '課題を一瞬で伝える', problem1Text: '曲げキズ、二次研磨、表面処理板のリスクなど、顧客が理解しやすい言葉で訴求します。',
         problem2Title: '選定をシンプルに', problem2Text: '板厚とパンチ内Rから候補型式を表示。営業の初期確認を速くします。',
         problem3Title: 'AIで問い合わせ対応', problem3Text: 'Google Drive の資料を読み込み、WingBend 専用の営業・技術回答を返します。',
-        lineEyebrow: 'Product line', lineTitle: 'WingBend / WingBend Plus', lineText: '営業説明では「何が違うか」「どんな顧客に合うか」を明確にすると、問い合わせから見積までの流れが速くなります。',
-        wbBadge: 'Standard', wbPoint1: '傷を抑えた曲げ加工の提案に使いやすい基本ライン', wbPoint2: '初期提案、カタログ案内、比較説明に向いています', wbPoint3: '詳細仕様は公式カタログ確認が必要です',
-        wbpBadge: 'Premium', wbpPoint1: 'より精度・高品質訴求をしたい案件向け', wbpPoint2: '外観品質が重要な部品・顧客説明に使いやすい', wbpPoint3: '最終選定はワーク形状・干渉・機械能力確認が必要です',
-        toolsEyebrow: 'Engineering tools', toolsTitle: '初期確認を速くする', toolsText: 'この計算は営業の初期判断用です。最終選定は必ず公式カタログ、ワーク形状、曲げ長さ、機械能力、干渉条件で確認してください。',
-        askModel: 'AIに選定説明を作らせる', openCatalog: 'カタログを見る', modelTitle: 'Model Selector',
-        thicknessLabel: 'Material thickness t (mm)', radiusLabel: 'Punch inside radius R (mm)', tonnageTitle: 'Tonnage Calculator', utsLabel: 'Tensile strength (kg/mm²)', vLabel: 'V opening (mm)', forceLabel: 'Required force',
-        resEyebrow: 'Sales materials', resTitle: '資料と営業導線', resText: '資料リンクはボタン化し、顧客が迷わず次の行動を取れるようにします。',
+        lineEyebrow: '製品ライン', lineTitle: 'WingBend / WingBend Plus', lineText: '営業説明では「何が違うか」「どんな顧客に合うか」を明確にすると、問い合わせから見積までの流れが速くなります。',
+        wbBadge: '標準', wbPoint1: '傷を抑えた曲げ加工の提案に使いやすい基本ライン', wbPoint2: '初期提案、カタログ案内、比較説明に向いています', wbPoint3: '詳細仕様は公式カタログ確認が必要です',
+        wbpBadge: '高精度', wbpPoint1: 'より精度・高品質訴求をしたい案件向け', wbpPoint2: '外観品質が重要な部品・顧客説明に使いやすい', wbpPoint3: '最終選定はワーク形状・干渉・機械能力確認が必要です',
+        toolsEyebrow: '技術ツール', toolsTitle: '初期確認を速くする', toolsText: 'この計算は営業の初期判断用です。最終選定は必ず公式カタログ、ワーク形状、曲げ長さ、機械能力、干渉条件で確認してください。',
+        askModel: 'AIに選定説明を作らせる', openCatalog: 'カタログを見る', modelTitle: '型式選定',
+        thicknessLabel: '板厚 t（mm）', radiusLabel: 'パンチ内R（mm）', tonnageTitle: '必要トン数計算', utsLabel: '引張強さ（kg/mm²）', vLabel: 'V幅（mm）', forceLabel: '必要荷重',
+        resEyebrow: '営業資料', resTitle: '資料と営業導線', resText: '資料リンクはボタン化し、顧客が迷わず次の行動を取れるようにします。',
         catalogTitle: 'カタログ', catalogText: '公式カタログ・仕様確認用。', installTitle: '技術・取付資料', installText: '図面、取付、確認資料。', videoTitle: '動画資料', videoText: 'デモ動画・顧客説明用。', openResource: '開く →', openResource2: '開く →', openResource3: '開く →',
-        contactEyebrow: 'Contact routing', contactTitle: '問い合わせを正しい部門へ', contactText: '営業、技術、一般問い合わせを自動で振り分けます。メール宛先は backend GS 側で設定してください。',
+        contactEyebrow: 'お問い合わせ', contactTitle: '問い合わせを正しい部門へ', contactText: '営業、技術、一般問い合わせを自動で振り分けます。メール宛先は backend GS 側で設定してください。',
         makeEmail: 'AIで営業メール文を作る', makeReply: 'AIで顧客返信文を作る',
-        nameLabel: 'Name', emailLabel: 'Email', deptLabel: 'Department', deptSales: 'Sales / Pricing', deptTechnical: 'Engineering / Technical', deptGeneral: 'General Inquiry', messageLabel: 'Message', contactSend: 'Send inquiry',
-        chatName: '営業ウィングベンドアシスタント', chatOnline: 'Online / Google Drive Knowledge', chatWelcome: 'こんにちは。WingBend の営業・技術説明をサポートします。カタログ、取付、見積説明、顧客返信文などを聞いてください。',
+        nameLabel: 'お名前', emailLabel: 'メールアドレス', deptLabel: 'お問い合わせ種別', deptSales: '営業・価格に関するお問い合わせ', deptTechnical: '技術・取付に関するお問い合わせ', deptGeneral: 'その他のお問い合わせ', messageLabel: 'お問い合わせ内容', contactSend: '送信する', phName: 'お名前', phEmail: '会社メールアドレス', phMessage: 'お問い合わせ内容をご入力ください',
+        chatName: '営業ウィングベンドアシスタント', chatOnline: 'オンライン / Google Drive資料連携', chatWelcome: 'こんにちは。WingBend の営業・技術説明をサポートします。カタログ、取付、見積説明、顧客返信文などを聞いてください。',
         chipDiff: 'WB/WBPの違い', chipInstall: '取付資料', chipEmail: '営業メール', chatPlaceholder: '質問を入力...', chatNote: 'AI回答は最終仕様確認の代替ではありません。重要案件は公式カタログ・技術確認を行ってください。',
         sending: '送信中...', sent: '送信しました。担当者より連絡します。', networkError: '通信エラーです。Web App URL・デプロイ・権限を確認してください。'
       },
       en: {
-        navSolution: 'Solution', navTools: 'Engineering Tools', navResources: 'Resources', navContact: 'Contact', navCta: 'Talk to us',
-        heroBadge: 'Scratch-Free Bending Solution',
+        navSolution: 'Solution', navTools: 'Engineering Tools', navGallery: 'Case Photos', navResources: 'Resources', navContact: 'Contact', navCta: 'Talk to us',
+        heroBadge: '曲げキズを抑えるソリューション',
         heroTitleA: 'Reduce bending scratches.', heroTitleB: 'Strengthen sales proposals.',
         heroText: 'A professional WingBend / WingBend Plus site that centralizes product benefits, materials, technical checks, quotation explanations, and AI-assisted customer responses.',
         heroPrimary: 'Check model', heroSecondary: 'View resources',
-        statA: 'Standard line', statB: 'High precision', statC: 'Sales support',
+        statA: '標準モデル', statB: '高精度モデル', statC: '営業支援AI',
         simTitle: 'Scratch-Free Result', beforeLabel: 'Before', afterLabel: 'After', beforeText: 'V-die marks remain visible', afterText: 'Cleaner bending surface',
-        assistantMini: 'AI assistant ready', askAi: 'Ask AI', imageNote: 'Replace this visual with actual product and bending photos for stronger credibility.',
+        assistantMini: 'AI相談できます', askAi: 'AIに聞く', imageNote: 'Replace this visual with actual product and bending photos for stronger credibility.',
+        heroImagePlaceholder: 'Place your WingBend product / bending photo here', heroImageBadge: 'Product / result image',
+        galleryEyebrow: 'Case photos', galleryTitle: 'Show WingBend value with real photos', galleryText: 'Upload photos to the GitHub assets/images folder to show product, installation, and bending result images.', galleryPhProduct: 'Upload product photo', galleryPhInstall: 'Upload installation photo', galleryPhResult: 'Upload bending result photo', galleryProductTitle: 'Product detail', galleryProductText: 'Show product shape, finish, and precision.', galleryInstallTitle: 'Installation image', galleryInstallText: 'Show how WingBend is installed on the press brake.', galleryResultTitle: 'Bending result', galleryResultText: 'Show scratch-reduction value visually.',
         problem1Title: 'Explain the pain fast', problem1Text: 'Communicate bending scratches, polishing workload, and coated-plate risk in customer-friendly language.',
         problem2Title: 'Simplify selection', problem2Text: 'Use thickness and punch inside radius to show candidate models for faster initial sales checks.',
         problem3Title: 'Support with AI', problem3Text: 'Read Google Drive materials and answer WingBend-specific sales and technical questions.',
-        lineEyebrow: 'Product line', lineTitle: 'WingBend / WingBend Plus', lineText: 'Clear differences and ideal use cases make the path from inquiry to quotation faster.',
-        wbBadge: 'Standard', wbPoint1: 'Core line for scratch-reduction bending proposals', wbPoint2: 'Good for initial proposal, catalog guidance, and comparison explanations', wbPoint3: 'Final specifications must be checked with the official catalog',
-        wbpBadge: 'Premium', wbpPoint1: 'For higher-quality and precision-oriented proposals', wbpPoint2: 'Useful when appearance quality is important', wbpPoint3: 'Final selection requires work shape, interference, and machine capacity confirmation',
-        toolsEyebrow: 'Engineering tools', toolsTitle: 'Speed up first checks', toolsText: 'These calculations are for initial sales guidance. Final selection must be verified with the official catalog, work shape, bending length, machine capacity, and interference conditions.',
+        lineEyebrow: '製品ライン', lineTitle: 'WingBend / WingBend Plus', lineText: 'Clear differences and ideal use cases make the path from inquiry to quotation faster.',
+        wbBadge: '標準', wbPoint1: 'Core line for scratch-reduction bending proposals', wbPoint2: 'Good for initial proposal, catalog guidance, and comparison explanations', wbPoint3: 'Final specifications must be checked with the official catalog',
+        wbpBadge: '高精度', wbpPoint1: 'For higher-quality and precision-oriented proposals', wbpPoint2: 'Useful when appearance quality is important', wbpPoint3: 'Final selection requires work shape, interference, and machine capacity confirmation',
+        toolsEyebrow: '技術ツール', toolsTitle: 'Speed up first checks', toolsText: 'These calculations are for initial sales guidance. Final selection must be verified with the official catalog, work shape, bending length, machine capacity, and interference conditions.',
         askModel: 'Ask AI to explain selection', openCatalog: 'Open catalog', modelTitle: 'Model Selector',
-        thicknessLabel: 'Material thickness t (mm)', radiusLabel: 'Punch inside radius R (mm)', tonnageTitle: 'Tonnage Calculator', utsLabel: 'Tensile strength (kg/mm²)', vLabel: 'V opening (mm)', forceLabel: 'Required force',
-        resEyebrow: 'Sales materials', resTitle: 'Resources and sales flow', resText: 'Resource links are designed as clear customer actions, not hidden text links.',
+        thicknessLabel: '板厚 t（mm）', radiusLabel: 'パンチ内R（mm）', tonnageTitle: '必要トン数計算', utsLabel: '引張強さ（kg/mm²）', vLabel: 'V幅（mm）', forceLabel: '必要荷重',
+        resEyebrow: '営業資料', resTitle: 'Resources and sales flow', resText: 'Resource links are designed as clear customer actions, not hidden text links.',
         catalogTitle: 'Catalog', catalogText: 'Official catalog and specification check.', installTitle: 'Technical / Installation', installText: 'Drawings, setup, and technical checks.', videoTitle: 'Videos', videoText: 'Demonstration and customer explanation videos.', openResource: 'Open →', openResource2: 'Open →', openResource3: 'Open →',
-        contactEyebrow: 'Contact routing', contactTitle: 'Route inquiries correctly', contactText: 'Sales, technical, and general inquiries are routed by backend GS. Configure actual recipient emails in backend.',
+        contactEyebrow: 'お問い合わせ', contactTitle: 'Route inquiries correctly', contactText: 'Sales, technical, and general inquiries are routed by backend GS. Configure actual recipient emails in backend.',
         makeEmail: 'Create sales email with AI', makeReply: 'Create customer reply with AI',
-        nameLabel: 'Name', emailLabel: 'Email', deptLabel: 'Department', deptSales: 'Sales / Pricing', deptTechnical: 'Engineering / Technical', deptGeneral: 'General Inquiry', messageLabel: 'Message', contactSend: 'Send inquiry',
-        chatName: 'WingBend Sales Assistant', chatOnline: 'Online / Google Drive Knowledge', chatWelcome: 'Hello. I can support WingBend sales and technical explanations, catalogs, installation, quotation explanation, and customer replies.',
+        nameLabel: 'お名前', emailLabel: 'メールアドレス', deptLabel: 'お問い合わせ種別', deptSales: '営業・価格に関するお問い合わせ', deptTechnical: '技術・取付に関するお問い合わせ', deptGeneral: 'その他のお問い合わせ', messageLabel: 'お問い合わせ内容', contactSend: '送信する', phName: 'お名前', phEmail: '会社メールアドレス', phMessage: 'お問い合わせ内容をご入力ください',
+        chatName: 'WingBend Sales Assistant', chatOnline: 'オンライン / Google Drive資料連携', chatWelcome: 'Hello. I can support WingBend sales and technical explanations, catalogs, installation, quotation explanation, and customer replies.',
         chipDiff: 'WB vs WBP', chipInstall: 'Installation', chipEmail: 'Sales email', chatPlaceholder: 'Type your question...', chatNote: 'AI answers do not replace final specification checks. Confirm important cases with the official catalog and technical team.',
         sending: 'Sending...', sent: 'Sent. Our team will contact you.', networkError: 'Network error. Check the Web App URL, deployment, and permissions.'
       },
       id: {
-        navSolution: 'Solusi', navTools: 'Tools Teknik', navResources: 'Materi', navContact: 'Kontak', navCta: 'Konsultasi',
+        navSolution: 'Solusi', navTools: 'Tools Teknik', navGallery: 'Foto Kasus', navResources: 'Materi', navContact: 'Kontak', navCta: 'Konsultasi',
         heroBadge: 'Solusi Bending Anti Gores',
         heroTitleA: 'Kurangi bekas bending.', heroTitleB: 'Perkuat sales proposal.',
         heroText: 'Website profesional untuk WingBend / WingBend Plus yang menggabungkan benefit produk, materi sales, pengecekan teknis, penjelasan quotation, dan chatbot AI khusus customer.',
         heroPrimary: 'Cek model', heroSecondary: 'Lihat materi',
-        statA: 'Standard line', statB: 'High precision', statC: 'Sales support',
+        statA: '標準モデル', statB: '高精度モデル', statC: '営業支援AI',
         simTitle: 'Hasil Bending Lebih Bersih', beforeLabel: 'Sebelum', afterLabel: 'Sesudah', beforeText: 'Bekas V-die masih terlihat', afterText: 'Permukaan bending lebih bersih',
         assistantMini: 'AI assistant siap', askAi: 'Tanya AI', imageNote: 'Ganti visual ini dengan foto produk dan hasil bending asli agar website jauh lebih meyakinkan.',
+        heroImagePlaceholder: 'Letakkan foto produk / hasil bending WingBend di sini', heroImageBadge: 'Gambar produk / hasil',
+        galleryEyebrow: 'Foto kasus', galleryTitle: 'Tunjukkan nilai WingBend dengan foto asli', galleryText: 'Upload foto ke folder GitHub assets/images untuk menampilkan foto produk, pemasangan, dan hasil bending.', galleryPhProduct: 'Upload foto produk', galleryPhInstall: 'Upload foto pemasangan', galleryPhResult: 'Upload foto hasil bending', galleryProductTitle: 'Detail produk', galleryProductText: 'Tampilkan bentuk, finishing, dan kesan presisi produk.', galleryInstallTitle: 'Foto pemasangan', galleryInstallText: 'Tampilkan cara WingBend terpasang di press brake.', galleryResultTitle: 'Hasil bending', galleryResultText: 'Tampilkan nilai anti gores melalui foto hasil aktual.',
         problem1Title: 'Masalah langsung terlihat', problem1Text: 'Bekas bending, waktu poles, dan risiko material coated dijelaskan dengan bahasa yang mudah dipahami customer.',
         problem2Title: 'Pemilihan lebih simpel', problem2Text: 'Dari tebal plat dan punch inside radius, website menampilkan kandidat model untuk pengecekan awal sales.',
         problem3Title: 'Dibantu AI khusus', problem3Text: 'AI membaca materi Google Drive dan menjawab pertanyaan sales/teknis khusus WingBend.',
-        lineEyebrow: 'Product line', lineTitle: 'WingBend / WingBend Plus', lineText: 'Sales akan lebih kuat jika customer langsung paham perbedaan, benefit, dan kapan masing-masing tipe cocok digunakan.',
-        wbBadge: 'Standard', wbPoint1: 'Line utama untuk proposal bending anti gores', wbPoint2: 'Cocok untuk penawaran awal, arahan katalog, dan penjelasan perbandingan', wbPoint3: 'Detail final tetap harus dicek ke katalog resmi',
-        wbpBadge: 'Premium', wbpPoint1: 'Untuk proposal dengan tuntutan kualitas dan presisi lebih tinggi', wbpPoint2: 'Cocok saat kualitas tampilan part sangat penting', wbpPoint3: 'Final selection perlu cek bentuk work, interference, dan kapasitas mesin',
-        toolsEyebrow: 'Engineering tools', toolsTitle: 'Percepat pengecekan awal', toolsText: 'Kalkulasi ini untuk panduan awal sales. Final selection tetap harus berdasarkan katalog resmi, bentuk work, panjang bending, kapasitas mesin, dan kondisi interference.',
+        lineEyebrow: '製品ライン', lineTitle: 'WingBend / WingBend Plus', lineText: 'Sales akan lebih kuat jika customer langsung paham perbedaan, benefit, dan kapan masing-masing tipe cocok digunakan.',
+        wbBadge: '標準', wbPoint1: 'Line utama untuk proposal bending anti gores', wbPoint2: 'Cocok untuk penawaran awal, arahan katalog, dan penjelasan perbandingan', wbPoint3: 'Detail final tetap harus dicek ke katalog resmi',
+        wbpBadge: '高精度', wbpPoint1: 'Untuk proposal dengan tuntutan kualitas dan presisi lebih tinggi', wbpPoint2: 'Cocok saat kualitas tampilan part sangat penting', wbpPoint3: 'Final selection perlu cek bentuk work, interference, dan kapasitas mesin',
+        toolsEyebrow: '技術ツール', toolsTitle: 'Percepat pengecekan awal', toolsText: 'Kalkulasi ini untuk panduan awal sales. Final selection tetap harus berdasarkan katalog resmi, bentuk work, panjang bending, kapasitas mesin, dan kondisi interference.',
         askModel: 'Minta AI jelaskan selection', openCatalog: 'Buka katalog', modelTitle: 'Model Selector',
         thicknessLabel: 'Tebal material t (mm)', radiusLabel: 'Punch inside radius R (mm)', tonnageTitle: 'Kalkulator Tonase', utsLabel: 'Tensile strength (kg/mm²)', vLabel: 'V opening (mm)', forceLabel: 'Kebutuhan gaya',
-        resEyebrow: 'Sales materials', resTitle: 'Materi dan alur sales', resText: 'Link materi dibuat sebagai tombol jelas agar customer tidak bingung langkah berikutnya.',
+        resEyebrow: '営業資料', resTitle: 'Materi dan alur sales', resText: 'Link materi dibuat sebagai tombol jelas agar customer tidak bingung langkah berikutnya.',
         catalogTitle: 'Katalog', catalogText: 'Katalog resmi dan pengecekan spesifikasi.', installTitle: 'Teknis / Pemasangan', installText: 'Drawing, setup, dan pengecekan teknis.', videoTitle: 'Video', videoText: 'Video demonstrasi dan penjelasan customer.', openResource: 'Buka →', openResource2: 'Buka →', openResource3: 'Buka →',
-        contactEyebrow: 'Contact routing', contactTitle: 'Inquiry masuk ke bagian tepat', contactText: 'Inquiry sales, teknis, dan umum diarahkan dari backend GS. Email tujuan asli diatur di backend.',
+        contactEyebrow: 'お問い合わせ', contactTitle: 'Inquiry masuk ke bagian tepat', contactText: 'Inquiry sales, teknis, dan umum diarahkan dari backend GS. Email tujuan asli diatur di backend.',
         makeEmail: 'Buat email sales dengan AI', makeReply: 'Buat balasan customer dengan AI',
-        nameLabel: 'Nama', emailLabel: 'Email', deptLabel: 'Departemen', deptSales: 'Sales / Harga', deptTechnical: 'Engineering / Teknis', deptGeneral: 'Inquiry umum', messageLabel: 'Pesan', contactSend: 'Kirim inquiry',
-        chatName: '営業ウィングベンドアシスタント', chatOnline: 'Online / Google Drive Knowledge', chatWelcome: 'Halo. Saya bisa membantu penjelasan sales dan teknis WingBend, katalog, pemasangan, quotation, dan balasan ke customer.',
+        nameLabel: 'Nama', emailLabel: 'Email', deptLabel: 'Jenis inquiry', deptSales: 'Pertanyaan sales / harga', deptTechnical: 'Pertanyaan teknis / pemasangan', deptGeneral: 'Inquiry lainnya', messageLabel: 'Pesan', contactSend: 'Kirim inquiry', phName: 'Nama Anda', phEmail: 'Email perusahaan', phMessage: 'Tulis detail kebutuhan Anda',
+        chatName: '営業ウィングベンドアシスタント', chatOnline: 'オンライン / Google Drive資料連携', chatWelcome: 'Halo. Saya bisa membantu penjelasan sales dan teknis WingBend, katalog, pemasangan, quotation, dan balasan ke customer.',
         chipDiff: 'WB vs WBP', chipInstall: 'Pemasangan', chipEmail: 'Email sales', chatPlaceholder: 'Ketik pertanyaan...', chatNote: 'Jawaban AI bukan pengganti final check. Untuk kasus penting, cek katalog resmi dan konfirmasi teknis.',
         sending: 'Mengirim...', sent: 'Terkirim. Tim akan menghubungi Anda.', networkError: 'Error koneksi. Cek Web App URL, deployment, dan izin akses.'
       }
