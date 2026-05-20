@@ -99,7 +99,8 @@
       border: 1px solid rgba(148,163,184,.2);
       background: #f1f5f9;
     }
-    .media-box img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .media-box img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94); }
+    .media-box:hover img { transform: scale(1.08); }
     .media-placeholder { min-height: 220px; display: flex; align-items: center; justify-content: center; padding: 28px; text-align: center; color: #64748b; font-weight: 800; line-height: 1.8; }
     .floating-orb { filter: blur(52px); opacity: .15; pointer-events: none; }
     .chat-bubble a { color: #2563eb; text-decoration: underline; word-break: break-all; font-weight: 700; }
@@ -302,7 +303,7 @@
       <div class="premium-card p-6 sm:p-8 lg:p-10 relative overflow-hidden">
         <div class="absolute -top-20 right-0 h-64 w-64 rounded-full bg-brand-100 floating-orb"></div>
         <div class="relative grid lg:grid-cols-[.85fr_1.15fr] gap-8">
-          <div><p class="text-brand-600 font-black tracking-[.22em] uppercase text-xs" data-i18n="contactEyebrow">お問い合わせ</p><h2 class="mt-3 text-3xl sm:text-5xl font-black tracking-tight text-slate-900" data-i18n="contactTitle">お問い合わせ・サポート</h2><p class="mt-5 text-slate-600 leading-7" data-i18n="contactText">営業、技術、資料請求などの内容に合わせて担当部門へ連絡します。</p><div class="mt-7 flex flex-col sm:flex-row lg:flex-col xl:flex-row gap-3"><button type="button" onclick="openChatWithPrompt(getPrompt('salesEmail'))" class="btn-secondary text-sm" data-i18n="makeEmail">AIで営業メール文を作る</button><button type="button" onclick="openChatWithPrompt(getPrompt('customerReply'))" class="btn-secondary text-sm" data-i18n="makeReply">AIで顧客返信文を作る</button></div></div>
+          <div><p class="text-brand-600 font-black tracking-[.22em] uppercase text-xs" data-i18n="contactEyebrow">お問い合わせ</p><h2 class="mt-3 text-3xl sm:text-5xl font-black tracking-tight text-slate-900" data-i18n="contactTitle">お問い合わせ・サポート</h2><p class="mt-5 text-slate-600 leading-7" data-i18n="contactText">営業、技術、資料請求などの内容に合わせて担当部門へ連絡します。</p></div>
           <form id="contactForm" class="premium-soft p-5 sm:p-6 space-y-4 bg-white shadow-sm border-slate-200">
             <div class="grid sm:grid-cols-2 gap-4"><label><span class="text-xs font-black text-slate-500 tracking-widest uppercase" data-i18n="nameLabel">お名前</span><input id="contactName" class="field mt-2" type="text" required data-i18n-placeholder="phName" placeholder="お名前" /></label><label><span class="text-xs font-black text-slate-500 tracking-widest uppercase" data-i18n="emailLabel">メールアドレス</span><input id="contactEmail" class="field mt-2" type="email" required data-i18n-placeholder="phEmail" placeholder="会社メールアドレス" /></label></div>
             <label><span class="text-xs font-black text-slate-500 tracking-widest uppercase" data-i18n="deptLabel">お問い合わせ種別</span><select id="contactDept" class="field mt-2 cursor-pointer font-bold"><option value="sales" data-i18n="deptSales">営業・価格に関するお問い合わせ</option><option value="technical" data-i18n="deptTechnical">技術・取付に関するお問い合わせ</option><option value="catalog" data-i18n="deptCatalog">カタログ・資料請求</option><option value="general" data-i18n="deptGeneral">その他のお問い合わせ</option></select></label>
@@ -420,9 +421,9 @@
       localStorage.setItem('wingbend_lang', lang);
       document.querySelectorAll('[data-i18n]').forEach(el => {
         const key = el.getAttribute('data-i18n');
-        if (I18N[lang] && I18N[lang][key]) {
-          if (el.tagName === 'SPAN' || el.tagName === 'DIV' || el.tagName === 'H1' || el.tagName === 'H2' || el.tagName === 'H3' || el.tagName === 'P' || el.tagName === 'BUTTON' || el.tagName === 'A' || el.tagName === 'OPTION') {
-             el.textContent = I18N[lang][key];
+       if (I18N[lang] && I18N[lang][key]) {
+          if (el.tagName !== 'INPUT' && el.tagName !== 'TEXTAREA') {
+             el.innerHTML = I18N[lang][key];
           }
         }
       });
@@ -500,8 +501,16 @@
         const req = await fetch(GAS_WEB_APP_URL, { method:'POST', headers:{ 'Content-Type':'text/plain;charset=utf-8' }, body:JSON.stringify({ action:'chat', message:text, context }) });
         const raw = await req.text(); let res = {}; try { res = JSON.parse(raw); } catch (_) {}
         const thinking = $(thinkingId); if (thinking) thinking.remove();
-        if (res.success) appendMsg('ai', res.text); else appendMsg('ai', 'Error: ' + (res.error || raw || t('networkError')));
-      } catch (err) { const thinking = $(thinkingId); if (thinking) thinking.remove(); appendMsg('ai', t('networkError')); }
+      if (res.success) {
+          appendMsg('ai', res.text);
+        } else {
+          // Cegah render HTML mentah yang panjang jika terjadi error server
+          let errorMsg = res.error || t('networkError');
+          appendMsg('ai', 'Error: ' + errorMsg);
+        }
+      } catch (err) { 
+        const thinking = $(thinkingId); if (thinking) thinking.remove(); appendMsg('ai', t('networkError')); 
+      }
       finally { chatSending = false; aiSendBtn.disabled = false; aiSendBtn.textContent = '➤'; }
     }
     aiSendBtn.addEventListener('click', sendChat);
