@@ -63,9 +63,6 @@
       border-bottom: 1px solid #e2e8f0;
       backdrop-filter: blur(8px);
     }
-
-    /* Typography */
-    h1, h2, h3, h4 { color: #102a43; }
     
     /* Buttons */
     .btn-primary {
@@ -73,7 +70,7 @@
       min-height: 44px; border-radius: 6px; padding-left: 1.5rem; padding-right: 1.5rem;
       background-color: #2563eb; color: #ffffff; font-weight: 600;
       transition: all 0.2s ease;
-      white-space: nowrap; /* Mencegah teks terpotong/bertumpuk */
+      white-space: nowrap; 
     }
     .btn-primary:hover { background-color: #1d4ed8; transform: translateY(-1px); box-shadow: 0 4px 6px rgba(37,99,235,0.2); }
     
@@ -172,7 +169,7 @@
             <span data-i18n="heroTitleB">提案力を高める。</span>
           </h1>
 
-          <p class="text-base sm:text-lg leading-relaxed text-corporate-200 font-normal max-w-lg mb-10" data-i18n="heroText">
+          <p class="text-base sm:text-lg leading-relaxed text-corporate-100 font-normal max-w-lg mb-10" data-i18n="heroText">
             WingBend / WingBend Plus の特徴、技術資料、型式確認、問い合わせ対応を一つにまとめた営業・技術サポートサイトです。
           </p>
 
@@ -286,16 +283,16 @@
           <div class="hidden lg:block h-full">
             <div class="bg-corporate-800 rounded-lg h-full p-10 flex flex-col justify-center text-white relative overflow-hidden">
                <div class="relative z-10">
-                 <h3 class="text-2xl font-bold mb-4" data-i18n="testiTitle">現場での実績</h3>
-                 <p class="text-corporate-200 text-sm leading-relaxed mb-8" data-i18n="testiDesc">お客様からは、二次研磨の時間が大幅に短縮され、最終製品の外観品質が向上したとの報告をいただいております。</p>
+                 <h3 class="text-2xl font-bold mb-4 text-white" data-i18n="testiTitle">現場での実績</h3>
+                 <p class="text-corporate-100 text-sm leading-relaxed mb-8" data-i18n="testiDesc">お客様からは、二次研磨の時間が大幅に短縮され、最終製品の外観品質が向上したとの報告をいただいております。</p>
                  <div class="grid grid-cols-2 gap-6">
                    <div>
                      <div class="text-4xl font-bold text-white mb-1">-80%</div>
-                     <div class="text-xs text-corporate-300 uppercase tracking-wide" data-i18n="testiMetric1">二次研磨時間</div>
+                     <div class="text-xs text-corporate-100 uppercase tracking-wide" data-i18n="testiMetric1">二次研磨時間</div>
                    </div>
                    <div>
                      <div class="text-4xl font-bold text-emerald-400 mb-1">0</div>
-                     <div class="text-xs text-corporate-300 uppercase tracking-wide" data-i18n="testiMetric2">曲げキズ</div>
+                     <div class="text-xs text-corporate-100 uppercase tracking-wide" data-i18n="testiMetric2">曲げキズ</div>
                    </div>
                  </div>
                </div>
@@ -350,21 +347,21 @@
           <div>
             <h2 class="text-2xl font-bold text-corporate-900 mb-6" data-i18n="resTitle">資料と営業導線</h2>
             <div class="space-y-4">
-              <a href="#" class="clean-card p-5 flex items-center justify-between hover:border-brand-main group">
+              <a href="https://drive.google.com/file/d/1oq_8Nkr5QD-O4QDaFemeIMNrnpeP_yWE/view?usp=sharing" target="_blank" rel="noopener" class="clean-card p-5 flex items-center justify-between hover:border-brand-main group">
                 <div class="flex items-center gap-4">
                   <div class="text-2xl">📄</div>
                   <div><div class="font-bold text-corporate-900" data-i18n="catalogTitle">カタログ</div><div class="text-xs text-corporate-500" data-i18n="catalogText">公式カタログ・仕様確認用。</div></div>
                 </div>
                 <div class="text-brand-main font-bold">→</div>
               </a>
-              <a href="#" class="clean-card p-5 flex items-center justify-between hover:border-brand-main group">
+              <a href="https://drive.google.com/drive/folders/1V-a3C5FS5o-5sW4AHUUNKd61_ISsK9KI?usp=sharing" target="_blank" rel="noopener" class="clean-card p-5 flex items-center justify-between hover:border-brand-main group">
                 <div class="flex items-center gap-4">
                   <div class="text-2xl">📐</div>
                   <div><div class="font-bold text-corporate-900" data-i18n="installTitle">技術・取付資料</div><div class="text-xs text-corporate-500" data-i18n="installText">図面、取付、確認資料。</div></div>
                 </div>
                 <div class="text-brand-main font-bold">→</div>
               </a>
-              <a href="#" class="clean-card p-5 flex items-center justify-between hover:border-brand-main group">
+              <a href="https://drive.google.com/drive/folders/1DWfyx6NezS0-6MWFlDaERYhdJZXHjhat?usp=drive_link" target="_blank" rel="noopener" class="clean-card p-5 flex items-center justify-between hover:border-brand-main group">
                 <div class="flex items-center gap-4">
                   <div class="text-2xl">▶️</div>
                   <div><div class="font-bold text-corporate-900" data-i18n="videoTitle">動画資料</div><div class="text-xs text-corporate-500" data-i18n="videoText">デモ動画・顧客説明用。</div></div>
@@ -401,9 +398,9 @@
     <section id="contact" class="bg-corporate-800 py-20 sm:py-28 relative">
       <div class="mx-auto max-w-2xl px-4 sm:px-6 relative z-10">
         
-        <div class="text-center mb-10 text-white">
-          <h2 class="text-3xl sm:text-4xl font-bold mb-4" data-i18n="contactTitle">お問い合わせ・サポート</h2>
-          <p class="text-corporate-200" data-i18n="contactText">営業、技術、資料請求などの内容に合わせて担当部門へ連絡します。</p>
+        <div class="text-center mb-10">
+          <h2 class="text-3xl sm:text-4xl font-bold mb-4 text-white" data-i18n="contactTitle">お問い合わせ・サポート</h2>
+          <p class="text-corporate-100" data-i18n="contactText">営業、技術、資料請求などの内容に合わせて担当部門へ連絡します。</p>
         </div>
 
         <div class="bg-white rounded-xl shadow-[0_20px_40px_rgba(0,0,0,0.2)] p-8 sm:p-10">
@@ -490,10 +487,10 @@
         toolsEyebrow:'技術ツール', toolsTitle:'初期確認を速くする', toolsText:'この計算は営業の初期判断用です。最終選定は公式カタログ、干渉条件で確認してください。', askModel:'AIに選定説明を作らせる', openCatalog:'カタログを見る', modelTitle:'型式選定', thicknessLabel:'板厚 t（mm）', radiusLabel:'パンチ内R（mm）', tonnageTitle:'必要トン数計算', utsLabel:'引張強さ（kg/mm²）', vLabel:'V幅（mm）', forceLabel:'必要荷重',
         casesEyebrow:'加工事例', casesTitle:'写真で伝える WingBend の価値', casesText:'製品写真・取付写真・加工結果を表示します。', casePhProduct:'製品写真', casePhInstall:'取付写真', casePhResult:'加工結果', caseProductTitle:'製品ディテール', caseProductText:'製品形状・質感・精度感を伝える写真。', caseInstallTitle:'取付イメージ', caseInstallText:'プレスブレーキへの装着イメージ。', caseResultTitle:'加工結果', caseResultText:'曲げキズ低減の価値を写真で伝えます。',
         resEyebrow:'営業資料', resTitle:'資料と営業導線', resText:'資料リンクはボタン化し、顧客が迷わず次の行動を取れるようにします。', catalogTitle:'カタログ', catalogText:'公式カタログ・仕様確認用。', installTitle:'技術・取付資料', installText:'図面、取付、確認資料。', videoTitle:'動画資料', videoText:'デモ動画・顧客説明用。', openResource:'開く →',
-        contactTitle:'お問い合わせ', contactText:'営業、技術、資料請求などの内容に合わせて担当部門へ連絡します。', nameLabel:'お名前', emailLabel:'メールアドレス', deptLabel:'お問い合わせ種別', deptSales:'営業・価格に関するお問い合わせ', deptTechnical:'技術・取付に関するお問い合わせ', deptCatalog:'カタログ・資料請求', messageLabel:'お問い合わせ内容', contactSend:'送信する', phName:'', phEmail:'', phMessage:'',
+        contactTitle:'お問い合わせ・サポート', contactText:'営業、技術、資料請求などの内容に合わせて担当部門へ連絡します。', nameLabel:'お名前', emailLabel:'メールアドレス', deptLabel:'お問い合わせ種別', deptSales:'営業・価格に関するお問い合わせ', deptTechnical:'技術・取付に関するお問い合わせ', deptCatalog:'カタログ・資料請求', messageLabel:'お問い合わせ内容', contactSend:'送信する', phName:'', phEmail:'', phMessage:'',
         chatName:'WingBend アシスタント', chatWelcome:'こんにちは。WingBend の営業・技術説明をサポートします。', chipDiff:'WB/WBPの違い', chipInstall:'取付資料', chatPlaceholder:'質問を入力...', chatNote:'最終仕様確認は公式カタログで行ってください。', sending:'送信中...', sent:'送信しました。', networkError:'通信エラーです。',
-        testiTitle:'現場での実績', testiDesc:'二次研磨の時間が大幅に短縮されました。', testiMetric1:'二次研磨時間', testiMetric2:'曲げキズ',
-        faqTitle:'よくあるご質問', faqQ1:'ステンレス板にも使用できますか？', faqA1:'はい、推奨しております。', faqQ2:'自社の機械に合う型式をどうやって確認しますか？', faqA2:'型式選定ツールを使用してください。'
+        testiTitle:'現場での実績', testiDesc:'お客様からは、二次研磨の時間が大幅に短縮され、最終製品の外観品質が向上したとの報告をいただいております。', testiMetric1:'二次研磨時間', testiMetric2:'曲げキズ',
+        faqTitle:'よくあるご質問 (FAQ)', faqQ1:'ステンレス板にも使用できますか？', faqA1:'はい、推奨しております。ウレタンシートを使用しなくても、表面処理鋼板、ステンレス、アルミの曲げキズ防止に非常に効果的です。', faqQ2:'自社の機械に合う型式をどうやって確認しますか？', faqA2:'型式選定ツールを使用してください。'
       },
       en: {
         navSolution:'Solution', navTools:'Tools', navCases:'Cases', navResources:'Resources', navContact:'Contact', navCta:'Talk to us',
