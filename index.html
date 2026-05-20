@@ -49,7 +49,7 @@
       mask-image: linear-gradient(to bottom, black 30%, transparent 95%);
     }
     .nav-blur {
-      background: rgba(255, 255, 255, 0.82);
+      background: rgba(255, 255, 255, 0.85);
       backdrop-filter: blur(20px);
       border-bottom: 1px solid rgba(226, 232, 240, 0.8);
     }
@@ -76,12 +76,15 @@
       background-clip: text;
       -webkit-text-fill-color: transparent;
     }
+    
+    /* FIX: white-space: nowrap mencegah teks tombol tumpuk (squished) */
     .btn-primary {
       display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem;
       min-height: 48px; border-radius: 999px; padding-left: 1.75rem; padding-right: 1.75rem;
       background: linear-gradient(135deg, #0c87eb, #026bc7);
       color: white; font-weight: 700; letter-spacing: 0.01em;
       box-shadow: 0 10px 25px -6px rgba(2,107,199,0.3);
+      white-space: nowrap; 
       transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
     }
     .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 14px 32px -4px rgba(2,107,199,0.4); filter: brightness(1.04); }
@@ -92,6 +95,7 @@
       background: #ffffff; border: 1px solid #e2e8f0;
       color: #334155; font-weight: 600;
       box-shadow: 0 4px 10px rgba(0,0,0,0.01);
+      white-space: nowrap;
       transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
     }
     .btn-secondary:hover { transform: translateY(-2px); background: #f8fafc; border-color: #cbd5e1; color: #0f172a; box-shadow: 0 8px 16px rgba(0,0,0,0.03); }
@@ -151,13 +155,13 @@
         <a href="#contact" class="hover:text-brand-500 transition-colors" data-i18n="navContact">お問い合わせ</a>
       </div>
 
-      <div class="flex items-center gap-2 sm:gap-4 shrink-0">
-        <select id="langSelect" class="field !py-2 !px-3 !rounded-xl !text-xs !font-bold cursor-pointer min-w-[84px] border-slate-200" aria-label="Language">
+      <div class="flex items-center gap-3 sm:gap-4 shrink-0">
+        <select id="langSelect" class="field !py-2 !px-3 !rounded-full !text-xs !font-bold cursor-pointer min-w-[90px] border-slate-200" aria-label="Language">
           <option value="ja">日本語</option>
           <option value="en">EN</option>
           <option value="id">ID</option>
         </select>
-        <a href="#contact" class="hidden sm:inline-flex btn-primary text-xs !min-h-[40px] px-5 shadow-none" data-i18n="navCta">Talk to us</a>
+        <a href="#contact" class="hidden sm:inline-flex btn-primary text-sm !min-h-[42px] px-6 shadow-md" data-i18n="navCta">Talk to us</a>
       </div>
     </nav>
   </header>
@@ -240,7 +244,7 @@
           <div>
             <p class="text-brand-500 font-bold tracking-widest uppercase text-xs" data-i18n="toolsEyebrow">技術ツール</p>
             <h2 class="mt-2 text-3xl sm:text-4xl font-extrabold tracking-tight text-slate-900" data-i18n="toolsTitle">初期確認を速くする</h2>
-            <p class="mt-5 text-slate-600 text-sm leading-relaxed" data-i18n="toolsText">この計算 is 営業の初期判断用です。最終選定は公式カタログ、ワーク形状、曲げ長さ、機械能力、干渉条件で確認してください。</p>
+            <p class="mt-5 text-slate-600 text-sm leading-relaxed" data-i18n="toolsText">この計算は営業の初期判断用です。最終選定は公式カタログ、ワーク形状、曲げ長さ、機械能力、干渉条件で確認してください。</p>
             <div class="mt-6 flex flex-wrap gap-3">
               <button type="button" onclick="openChatWithPrompt(getPrompt('modelCheck'))" class="btn-secondary text-xs !min-h-[42px] px-5" data-i18n="askModel">AIに選定説明を作らせる</button>
               <a href="#resources" class="btn-secondary text-xs !min-h-[42px] px-5" data-i18n="openCatalog">カタログを見る</a>
@@ -430,11 +434,11 @@
 
     const I18N = {
       ja: {
-        navSolution:'ソリューション', navTools:'技術ツール', navCases:'加工事例', navResources:'資料', navContact:'お問い合わせ', navCta:'相談する',
+        navSolution:'ソリューション', navTools:'技術ツール', navCases:'加工事例', navResources:'資料', navContact:'お問い合わせ', navCta:'Talk to us',
         heroBadge:'曲げキズを抑えるソリューション', heroTitleA:'曲げキズを減らし、', heroTitleB:'提案力を高める。', heroText:'WingBend / WingBend Plus の特徴、技術資料、型式確認、問い合わせ対応を一つにまとめた営業・技術サポートサイトです。', heroPrimary:'型式を確認する', heroSecondary:'資料を見る',
         statA:'標準モデル', statB:'高精度モデル', statC:'営業支援AI', heroVisualLabel:'製品・加工イメージ', heroVisualTitle:'WingBend の価値を写真で伝える', heroImagePlaceholder:'ここに WingBend の写真を表示します', heroImageBadge:'製品写真', assistantMini:'AI相談できます', askAi:'AIに聞く',
         problem1Title:'課題を一瞬で伝える', problem1Text:'曲げキズ、二次研磨、表面処理板のリスクを、顧客が理解しやすい言葉で伝えます。', problem2Title:'初期選定を速くする', problem2Text:'板厚とパンチ内Rから候補型式を表示し、営業の初期確認をスムーズにします。', problem3Title:'AIで問い合わせ対応', problem3Text:'Google Drive の資料を参照し、WingBend 専用の営業・技術回答を返します。',
-        lineEyebrow:'製品ライン', lineTitle:'WingBend / WingBend Plus', lineText:'違いと向いている用途を明確にすると、問い合わせから見積までの流れが速くなります。', wbBadge:'標準', wbPoint1:'傷を抑えた曲げ加工 of 提案に使いやすい基本ライン', wbPoint2:'初期提案、カタログ案内、比較説明に向いています', wbPoint3:'詳細仕様は公式カタログ確認が必要です', wbpBadge:'高精度', wbpPoint1:'より高品質・高精度を訴求したい案件向け', wbpPoint2:'外観品質が重要な部品 of 説明に使いやすい', wbpPoint3:'最終選定はワーク形状・干渉・機械能力確認が必要です',
+        lineEyebrow:'製品ライン', lineTitle:'WingBend / WingBend Plus', lineText:'違いと向いている用途を明確にすると、問い合わせから見積までの流れが速くなります。', wbBadge:'標準', wbPoint1:'傷を抑えた曲げ加工の提案に使いやすい基本ライン', wbPoint2:'初期提案、カタログ案内、比較説明に向いています', wbPoint3:'詳細仕様は公式カタログ確認が必要です', wbpBadge:'高精度', wbpPoint1:'より高品質・高精度を訴求したい案件向け', wbpPoint2:'外観品質が重要な部品の説明に使いやすい', wbpPoint3:'最終選定はワーク形状・干渉・機械能力確認が必要です',
         toolsEyebrow:'技術ツール', toolsTitle:'初期確認を速くする', toolsText:'この計算は営業の初期判断用です。最終選定は公式カタログ、ワーク形状、曲げ長さ、機械能力、干渉条件で確認してください。', askModel:'AIに選定説明を作らせる', openCatalog:'カタログを見る', modelTitle:'型式選定', thicknessLabel:'板厚 t（mm）', radiusLabel:'パンチ内R（mm）', tonnageTitle:'必要トン数計算', utsLabel:'引張強さ（kg/mm²）', vLabel:'V幅（mm）', forceLabel:'必要荷重',
         casesEyebrow:'加工事例', casesTitle:'写真で伝える WingBend の価値', casesText:'GitHub の assets/images フォルダに写真を入れるだけで、製品写真・取付写真・加工結果を表示できます。', casePhProduct:'製品写真を入れてください', casePhInstall:'取付写真を入れてください', casePhResult:'加工結果写真を入れてください', caseProductTitle:'製品ディテール', caseProductText:'製品形状・質感・精度感を伝える写真。', caseInstallTitle:'取付イメージ', caseInstallText:'プレスブレーキへの装着イメージを明確にします。', caseResultTitle:'加工結果', caseResultText:'曲げキズ低減の価値を写真で伝えます。',
         resEyebrow:'営業資料', resTitle:'資料と営業導線', resText:'資料リンクはボタン化し、顧客が迷わず次の行動を取れるようにします。', catalogTitle:'カタログ', catalogText:'公式カタログ・仕様確認用。', installTitle:'技術・取付資料', installText:'図面、取付、確認資料。', videoTitle:'動画資料', videoText:'デモ動画・顧客説明用。', openResource:'開く →',
@@ -458,8 +462,8 @@
         faqTitle:'Frequently Asked Questions', faqQ1:'Can WingBend be used for Stainless Steel plates?', faqA1:'Yes, highly recommended. WingBend is very effective for coated materials, stainless steel, and aluminum to prevent scratches without using urethane sheets.', faqQ2:'How do I know which model fits my machine?', faqA2:'You can use the "Model Selector" tool above by entering the plate thickness and inside R, or contact our technical team with your drawing.'
       },
       id: {
-        navSolution:'Solusi', navTools:'Tools Teknik', navCases:'Foto Kasus', navResources:'Materi', navContact:'Kontak', navCta:'Konsultasi',
-        heroBadge:'Solusi Bending Anti Goles', heroTitleA:'Kurangi bekas bending.', heroTitleB:'Perkuat proposal.', heroText:'Website profesional untuk WingBend / WingBend Plus yang menggabungkan nilai produk, materi teknis, cek model, inquiry, dan bantuan AI.', heroPrimary:'Cek model', heroSecondary:'Lihat materi',
+        navSolution:'Solusi', navTools:'Tools Teknik', navCases:'Foto Kasus', navResources:'Materi', navContact:'Kontak', navCta:'Talk to us',
+        heroBadge:'Solusi Bending Anti Gores', heroTitleA:'Kurangi bekas bending.', heroTitleB:'Perkuat proposal.', heroText:'Website profesional untuk WingBend / WingBend Plus yang menggabungkan nilai produk, materi teknis, cek model, inquiry, dan bantuan AI.', heroPrimary:'Cek model', heroSecondary:'Lihat materi',
         statA:'Model standar', statB:'Presisi tinggi', statC:'AI sales', heroVisualLabel:'Gambar produk / hasil', heroVisualTitle:'Tampilkan nilai WingBend dengan visual', heroImagePlaceholder:'Letakkan foto WingBend di sini', heroImageBadge:'Foto produk', assistantMini:'AI siap membantu', askAi:'Tanya AI',
         problem1Title:'Masalah langsung jelas', problem1Text:'Jelaskan bekas bending, pekerjaan polishing, dan risiko material coated dengan bahasa yang mudah dipahami customer.', problem2Title:'Percepat initial selection', problem2Text:'Tampilkan kandidat model dari tebal material dan punch inside radius untuk mempercepat pengecekan sales.', problem3Title:'Inquiry dibantu AI', problem3Text:'AI membaca materi Google Drive dan menjawab pertanyaan sales/teknis khusus WingBend.',
         lineEyebrow:'Product line', lineTitle:'WingBend / WingBend Plus', lineText:'Perbedaan dan penggunaan yang jelas membuat alur dari inquiry ke quotation lebih cepat.', wbBadge:'Standar', wbPoint1:'Line utama untuk proposal bending anti gores', wbPoint2:'Cocok untuk proposal awal, arahan katalog, dan perbandingan', wbPoint3:'Spesifikasi final harus dicek ke katalog resmi', wbpBadge:'Presisi tinggi', wbpPoint1:'Untuk proposal kualitas dan presisi lebih tinggi', wbpPoint2:'Cocok saat kualitas tampilan part penting', wbpPoint3:'Final selection perlu cek bentuk work, interference, dan kapasitas mesin',
@@ -566,7 +570,7 @@
       chatSending = true; appendMsg('user', text); aiInput.value = ''; aiSendBtn.disabled = true; aiSendBtn.textContent = '...';
       const thinkingId = 'thinking-' + Date.now(); appendMsg('ai', '<span class="animate-pulse text-slate-400">Thinking...</span>', { id: thinkingId, raw: true });
       try {
-        const context = { lang: currentLang(), page: location.href, modelSelector: { thickness: safeNum(tVal), insideRadius: safeNum(rVal), recommendedWB: $('recWB').textContent, recommendedWBP: $('recWBP').textContent }, tonnage: { uts: safeNum(utsVal), vOpening: safeNum(vVal), forceTonPerMeter: Brod('tonnageRes').textContent } };
+        const context = { lang: currentLang(), page: location.href, modelSelector: { thickness: safeNum(tVal), insideRadius: safeNum(rVal), recommendedWB: $('recWB').textContent, recommendedWBP: $('recWBP').textContent }, tonnage: { uts: safeNum(utsVal), vOpening: safeNum(vVal), forceTonPerMeter: $('tonnageRes').textContent } };
         const req = await fetch(GAS_WEB_APP_URL, { method:'POST', headers:{ 'Content-Type':'text/plain;charset=utf-8' }, body:JSON.stringify({ action:'chat', message:text, context }) });
         const raw = await req.text(); let res = {}; try { res = JSON.parse(raw); } catch (_) {}
         const thinking = $(thinkingId); if (thinking) thinking.remove();
