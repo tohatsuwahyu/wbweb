@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <title>WingBend by TOHATSU | Scratch-Free Press Brake Bending</title>
   <meta name="description" content="TOHATSU WingBend / WingBend Plus professional website with technical tools, resources, and AI support." />
-  <meta name="theme-color" content="#07111f" />
+  <meta name="theme-color" content="#ffffff" />
 
   <link rel="icon" href="./tsh.png" type="image/png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -19,13 +19,12 @@
         extend: {
           fontFamily: { sans: ['Inter', 'Noto Sans JP', 'system-ui', 'sans-serif'] },
           colors: {
-            ink: { 950: '#050914', 900: '#0b1220', 800: '#111b2f', 700: '#1c2b47' },
             brand: { 50: '#eff6ff', 100: '#dbeafe', 300: '#93c5fd', 400: '#60a5fa', 500: '#3b82f6', 600: '#2563eb', 700: '#1d4ed8' },
             gold: { 300: '#fde68a', 400: '#facc15', 500: '#eab308' }
           },
           boxShadow: {
             glow: '0 0 70px rgba(59,130,246,.25)',
-            card: '0 26px 90px rgba(2,8,23,.34)'
+            card: '0 20px 40px rgba(37,99,235,.08)'
           }
         }
       }
@@ -38,38 +37,35 @@
     html { scroll-padding-top: 96px; }
     body {
       min-height: 100vh;
-      background:
-        radial-gradient(circle at 12% 8%, rgba(37,99,235,.24), transparent 34rem),
-        radial-gradient(circle at 88% 5%, rgba(14,165,233,.14), transparent 32rem),
-        linear-gradient(180deg, #050914 0%, #0b1220 48%, #07111f 100%);
-      color: #f8fafc;
+      background: linear-gradient(180deg, #ffffff 0%, #eff6ff 50%, #dbeafe 100%);
+      color: #1e293b;
       overflow-x: hidden;
     }
     .page-grid {
       background-image:
-        linear-gradient(rgba(148,163,184,.07) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(148,163,184,.07) 1px, transparent 1px);
+        linear-gradient(rgba(59,130,246,.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(59,130,246,.05) 1px, transparent 1px);
       background-size: 42px 42px;
       mask-image: linear-gradient(to bottom, black 0%, transparent 82%);
     }
     .nav-blur {
-      background: rgba(5, 9, 20, .82);
+      background: rgba(255, 255, 255, .90);
       backdrop-filter: blur(22px);
-      border-bottom: 1px solid rgba(148,163,184,.14);
+      border-bottom: 1px solid rgba(59,130,246,.15);
     }
     .premium-card {
-      background: linear-gradient(180deg, rgba(17,27,47,.90), rgba(11,18,32,.76));
-      border: 1px solid rgba(148,163,184,.16);
-      box-shadow: 0 24px 80px rgba(2,8,23,.30);
+      background: #ffffff;
+      border: 1px solid rgba(59,130,246,.15);
+      box-shadow: 0 20px 40px rgba(37,99,235,.08);
       border-radius: 28px;
     }
     .premium-soft {
-      background: rgba(15,23,42,.64);
-      border: 1px solid rgba(148,163,184,.14);
+      background: rgba(239, 246, 255, 0.6);
+      border: 1px solid rgba(147, 197, 253, 0.3);
       border-radius: 24px;
     }
     .gradient-title {
-      background: linear-gradient(135deg, #fff 8%, #bfdbfe 42%, #60a5fa 75%, #fde68a 112%);
+      background: linear-gradient(135deg, #1e3a8a 8%, #2563eb 42%, #3b82f6 75%, #eab308 112%);
       -webkit-background-clip: text;
       background-clip: text;
       -webkit-text-fill-color: transparent;
@@ -86,30 +82,30 @@
     .btn-secondary {
       display: inline-flex; align-items: center; justify-content: center; gap: .55rem;
       min-height: 48px; border-radius: 999px; padding-left: 1.4rem; padding-right: 1.4rem;
-      background: rgba(15,23,42,.72); border: 1px solid rgba(148,163,184,.24);
-      color: white; font-weight: 800;
+      background: #ffffff; border: 1px solid rgba(148,163,184,.4);
+      color: #0f172a; font-weight: 800;
       transition: transform .18s ease, background .18s ease, border-color .18s ease;
     }
-    .btn-secondary:hover { transform: translateY(-2px); background: rgba(30,41,59,.9); border-color: rgba(96,165,250,.7); }
+    .btn-secondary:hover { transform: translateY(-2px); background: #f8fafc; border-color: #60a5fa; }
     .field {
-      width: 100%; background: rgba(5,9,20,.78); border: 1px solid rgba(148,163,184,.22);
-      border-radius: 16px; padding: 13px 15px; color: white; outline: none;
+      width: 100%; background: #ffffff; border: 1px solid rgba(148,163,184,.4);
+      border-radius: 16px; padding: 13px 15px; color: #0f172a; outline: none;
       transition: border-color .18s ease, box-shadow .18s ease, background .18s ease;
     }
-    .field::placeholder { color: rgba(203,213,225,.58); }
-    .field:focus { border-color: rgba(96,165,250,.9); box-shadow: 0 0 0 4px rgba(59,130,246,.16); background: rgba(5,9,20,.92); }
+    .field::placeholder { color: #94a3b8; }
+    .field:focus { border-color: rgba(96,165,250,.9); box-shadow: 0 0 0 4px rgba(59,130,246,.16); background: #ffffff; }
     .media-box {
       position: relative; overflow: hidden; border-radius: 24px;
-      border: 1px solid rgba(148,163,184,.16);
-      background: radial-gradient(circle at 20% 20%, rgba(59,130,246,.22), transparent 18rem), linear-gradient(135deg, rgba(15,23,42,.92), rgba(30,41,59,.62));
+      border: 1px solid rgba(148,163,184,.2);
+      background: #f1f5f9;
     }
     .media-box img { width: 100%; height: 100%; object-fit: cover; display: block; }
-    .media-placeholder { min-height: 220px; display: flex; align-items: center; justify-content: center; padding: 28px; text-align: center; color: #94a3b8; font-weight: 800; line-height: 1.8; }
-    .floating-orb { filter: blur(52px); opacity: .35; pointer-events: none; }
-    .chat-bubble a { color: #93c5fd; text-decoration: underline; word-break: break-all; font-weight: 700; }
+    .media-placeholder { min-height: 220px; display: flex; align-items: center; justify-content: center; padding: 28px; text-align: center; color: #64748b; font-weight: 800; line-height: 1.8; }
+    .floating-orb { filter: blur(52px); opacity: .15; pointer-events: none; }
+    .chat-bubble a { color: #2563eb; text-decoration: underline; word-break: break-all; font-weight: 700; }
     .chat-scrollbar::-webkit-scrollbar { width: 8px; }
-    .chat-scrollbar::-webkit-scrollbar-track { background: rgba(15,23,42,.5); }
-    .chat-scrollbar::-webkit-scrollbar-thumb { background: rgba(96,165,250,.42); border-radius: 999px; }
+    .chat-scrollbar::-webkit-scrollbar-track { background: rgba(241,245,249,.5); }
+    .chat-scrollbar::-webkit-scrollbar-thumb { background: rgba(148,163,184,.42); border-radius: 999px; }
     @media (max-width: 640px) {
       :root { --nav-h: 68px; }
       .premium-card { border-radius: 22px; }
@@ -123,21 +119,21 @@
   <header class="fixed top-0 left-0 right-0 z-50 nav-blur">
     <nav class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 h-[var(--nav-h)] flex items-center justify-between gap-4">
       <a href="#top" class="flex items-center gap-3 min-w-0" aria-label="WingBend home">
-        <span class="h-11 w-11 shrink-0 rounded-2xl bg-white p-1.5 shadow-lg flex items-center justify-center">
+        <span class="h-11 w-11 shrink-0 rounded-2xl bg-white p-1.5 shadow-md flex items-center justify-center border border-slate-100">
           <img src="./tsh.png" onerror="this.style.display='none'; this.parentElement.textContent='TSH';" alt="TOHATSU logo" class="h-full w-full object-contain" />
         </span>
         <span class="min-w-0">
-          <span class="block text-base sm:text-lg font-black tracking-[.18em] leading-none">WINGBEND</span>
-          <span class="hidden sm:block text-[10px] text-slate-400 font-bold tracking-[.22em] uppercase mt-1">by TOHATSU</span>
+          <span class="block text-base sm:text-lg font-black tracking-[.18em] leading-none text-slate-900">WINGBEND</span>
+          <span class="hidden sm:block text-[10px] text-slate-500 font-bold tracking-[.22em] uppercase mt-1">by TOHATSU</span>
         </span>
       </a>
 
-      <div class="hidden lg:flex items-center gap-7 text-sm font-bold text-slate-300">
-        <a href="#solution" class="hover:text-brand-300 transition-colors" data-i18n="navSolution">ソリューション</a>
-        <a href="#tools" class="hover:text-brand-300 transition-colors" data-i18n="navTools">技術ツール</a>
-        <a href="#cases" class="hover:text-brand-300 transition-colors" data-i18n="navCases">加工事例</a>
-        <a href="#resources" class="hover:text-brand-300 transition-colors" data-i18n="navResources">資料</a>
-        <a href="#contact" class="hover:text-brand-300 transition-colors" data-i18n="navContact">お問い合わせ</a>
+      <div class="hidden lg:flex items-center gap-7 text-sm font-bold text-slate-600">
+        <a href="#solution" class="hover:text-brand-600 transition-colors" data-i18n="navSolution">ソリューション</a>
+        <a href="#tools" class="hover:text-brand-600 transition-colors" data-i18n="navTools">技術ツール</a>
+        <a href="#cases" class="hover:text-brand-600 transition-colors" data-i18n="navCases">加工事例</a>
+        <a href="#resources" class="hover:text-brand-600 transition-colors" data-i18n="navResources">資料</a>
+        <a href="#contact" class="hover:text-brand-600 transition-colors" data-i18n="navContact">お問い合わせ</a>
       </div>
 
       <div class="flex items-center gap-2 sm:gap-3">
@@ -155,17 +151,17 @@
     <section class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-32 sm:pt-40 pb-14 sm:pb-20">
       <div class="grid lg:grid-cols-[1.02fr_.98fr] gap-10 lg:gap-14 items-center">
         <div>
-          <div class="inline-flex items-center gap-2 rounded-full border border-brand-400/30 bg-brand-500/10 px-4 py-2 text-xs sm:text-sm font-black text-brand-100 shadow-glow">
-            <span class="h-2 w-2 rounded-full bg-emerald-400 animate-pulse"></span>
+          <div class="inline-flex items-center gap-2 rounded-full border border-brand-200 bg-brand-50 px-4 py-2 text-xs sm:text-sm font-black text-brand-700 shadow-sm">
+            <span class="h-2 w-2 rounded-full bg-emerald-500 animate-pulse"></span>
             <span data-i18n="heroBadge">曲げキズを抑えるソリューション</span>
           </div>
 
-          <h1 class="mt-7 text-4xl sm:text-6xl lg:text-7xl font-black leading-[.96] tracking-[-.05em]">
+          <h1 class="mt-7 text-4xl sm:text-6xl lg:text-7xl font-black leading-[.96] tracking-[-.05em] text-slate-900">
             <span data-i18n="heroTitleA">曲げキズを減らし、</span><br />
             <span class="gradient-title" data-i18n="heroTitleB">提案力を高める。</span>
           </h1>
 
-          <p class="mt-6 max-w-2xl text-base sm:text-lg leading-8 text-slate-300 font-medium" data-i18n="heroText">
+          <p class="mt-6 max-w-2xl text-base sm:text-lg leading-8 text-slate-600 font-medium" data-i18n="heroText">
             WingBend / WingBend Plus の特徴、技術資料、型式確認、問い合わせ対応を一つにまとめた営業・技術サポートサイトです。
           </p>
 
@@ -175,31 +171,31 @@
           </div>
 
           <div class="mt-8 grid grid-cols-3 gap-3 max-w-xl">
-            <div class="premium-soft p-4"><div class="text-2xl sm:text-3xl font-black">WB</div><div class="mt-1 text-[11px] sm:text-xs text-slate-400 font-bold" data-i18n="statA">標準モデル</div></div>
-            <div class="premium-soft p-4"><div class="text-2xl sm:text-3xl font-black text-brand-300">WBP</div><div class="mt-1 text-[11px] sm:text-xs text-slate-400 font-bold" data-i18n="statB">高精度モデル</div></div>
-            <div class="premium-soft p-4"><div class="text-2xl sm:text-3xl font-black text-gold-300">AI</div><div class="mt-1 text-[11px] sm:text-xs text-slate-400 font-bold" data-i18n="statC">営業支援AI</div></div>
+            <div class="premium-soft p-4"><div class="text-2xl sm:text-3xl font-black text-slate-800">WB</div><div class="mt-1 text-[11px] sm:text-xs text-slate-500 font-bold" data-i18n="statA">標準モデル</div></div>
+            <div class="premium-soft p-4"><div class="text-2xl sm:text-3xl font-black text-brand-600">WBP</div><div class="mt-1 text-[11px] sm:text-xs text-slate-500 font-bold" data-i18n="statB">高精度モデル</div></div>
+            <div class="premium-soft p-4"><div class="text-2xl sm:text-3xl font-black text-gold-500">AI</div><div class="mt-1 text-[11px] sm:text-xs text-slate-500 font-bold" data-i18n="statC">営業支援AI</div></div>
           </div>
         </div>
 
         <div class="relative">
-          <div class="absolute -top-8 -right-6 h-44 w-44 bg-brand-500 rounded-full floating-orb"></div>
-          <div class="absolute -bottom-8 -left-8 h-52 w-52 bg-cyan-400 rounded-full floating-orb"></div>
+          <div class="absolute -top-8 -right-6 h-44 w-44 bg-brand-200 rounded-full floating-orb"></div>
+          <div class="absolute -bottom-8 -left-8 h-52 w-52 bg-cyan-200 rounded-full floating-orb"></div>
           <div class="premium-card p-5 sm:p-7 relative overflow-hidden">
-            <div class="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-brand-300/80 to-transparent"></div>
+            <div class="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-brand-300 to-transparent"></div>
             <div class="flex items-center justify-between gap-4 mb-5">
               <div>
                 <div class="text-xs text-slate-400 font-black tracking-[.22em] uppercase" data-i18n="heroVisualLabel">製品・加工イメージ</div>
-                <div class="mt-1 text-2xl sm:text-3xl font-black" data-i18n="heroVisualTitle">WingBend の価値を写真で伝える</div>
+                <div class="mt-1 text-2xl sm:text-3xl font-black text-slate-900" data-i18n="heroVisualTitle">WingBend の価値を写真で伝える</div>
               </div>
-              <div class="h-12 w-12 rounded-2xl bg-brand-500/15 border border-brand-400/30 flex items-center justify-center text-2xl">⚙️</div>
+              <div class="h-12 w-12 rounded-2xl bg-brand-100 border border-brand-200 flex items-center justify-center text-2xl">⚙️</div>
             </div>
             <div class="media-box h-[280px] sm:h-[350px]">
               <img src="./assets/images/hero-wingbend.webp" alt="WingBend product and bending result" onerror="this.style.display='none'; this.nextElementSibling.classList.remove('hidden');" />
               <div class="media-placeholder hidden"><div><div class="text-3xl mb-3">📷</div><div data-i18n="heroImagePlaceholder">ここに WingBend の写真を表示します</div><div class="mt-2 text-xs text-slate-500">assets/images/hero-wingbend.webp</div></div></div>
-              <div class="absolute left-4 top-4 rounded-full bg-slate-950/75 border border-white/10 px-4 py-2 text-xs font-black text-white backdrop-blur" data-i18n="heroImageBadge">製品写真</div>
+              <div class="absolute left-4 top-4 rounded-full bg-white/90 border border-slate-200 shadow-sm px-4 py-2 text-xs font-black text-slate-800 backdrop-blur" data-i18n="heroImageBadge">製品写真</div>
             </div>
-            <div class="mt-5 premium-soft p-4 flex items-center justify-between gap-3">
-              <div><div class="text-xs text-slate-400 font-bold" data-i18n="assistantMini">AI相談できます</div><div class="font-black text-lg">営業ウィングベンドアシスタント</div></div>
+            <div class="mt-5 premium-soft p-4 flex items-center justify-between gap-3 bg-blue-50/50">
+              <div><div class="text-xs text-slate-500 font-bold" data-i18n="assistantMini">AI相談できます</div><div class="font-black text-lg text-slate-900">営業ウィングベンドアシスタント</div></div>
               <button type="button" onclick="openChatWithPrompt(getPrompt('diff'))" class="btn-primary !min-h-[42px] px-4 text-xs" data-i18n="askAi">AIに聞く</button>
             </div>
           </div>
@@ -209,30 +205,51 @@
 
     <section id="solution" class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-10 sm:py-16">
       <div class="grid lg:grid-cols-3 gap-5">
-        <article class="premium-card p-7"><div class="h-12 w-12 rounded-2xl bg-brand-500/15 border border-brand-400/30 flex items-center justify-center text-xl font-black">01</div><h2 class="mt-5 text-2xl font-black" data-i18n="problem1Title">課題を一瞬で伝える</h2><p class="mt-3 text-slate-400 leading-7" data-i18n="problem1Text">曲げキズ、二次研磨、表面処理板のリスクを、顧客が理解しやすい言葉で伝えます。</p></article>
-        <article class="premium-card p-7"><div class="h-12 w-12 rounded-2xl bg-emerald-500/15 border border-emerald-400/30 flex items-center justify-center text-xl font-black">02</div><h2 class="mt-5 text-2xl font-black" data-i18n="problem2Title">初期選定を速くする</h2><p class="mt-3 text-slate-400 leading-7" data-i18n="problem2Text">板厚とパンチ内Rから候補型式を表示し、営業の初期確認をスムーズにします。</p></article>
-        <article class="premium-card p-7"><div class="h-12 w-12 rounded-2xl bg-gold-500/15 border border-gold-300/30 flex items-center justify-center text-xl font-black">03</div><h2 class="mt-5 text-2xl font-black" data-i18n="problem3Title">AIで問い合わせ対応</h2><p class="mt-3 text-slate-400 leading-7" data-i18n="problem3Text">Google Drive の資料を参照し、WingBend 専用の営業・技術回答を返します。</p></article>
+        <article class="premium-card p-7"><div class="h-12 w-12 rounded-2xl bg-brand-100 border border-brand-200 flex items-center justify-center text-xl font-black text-brand-700">01</div><h2 class="mt-5 text-2xl font-black text-slate-900" data-i18n="problem1Title">課題を一瞬で伝える</h2><p class="mt-3 text-slate-600 leading-7" data-i18n="problem1Text">曲げキズ、二次研磨、表面処理板のリスクを、顧客が理解しやすい言葉で伝えます。</p></article>
+        <article class="premium-card p-7"><div class="h-12 w-12 rounded-2xl bg-emerald-100 border border-emerald-200 flex items-center justify-center text-xl font-black text-emerald-700">02</div><h2 class="mt-5 text-2xl font-black text-slate-900" data-i18n="problem2Title">初期選定を速くする</h2><p class="mt-3 text-slate-600 leading-7" data-i18n="problem2Text">板厚とパンチ内Rから候補型式を表示し、営業の初期確認をスムーズにします。</p></article>
+        <article class="premium-card p-7"><div class="h-12 w-12 rounded-2xl bg-gold-100 border border-gold-200 flex items-center justify-center text-xl font-black text-gold-700">03</div><h2 class="mt-5 text-2xl font-black text-slate-900" data-i18n="problem3Title">AIで問い合わせ対応</h2><p class="mt-3 text-slate-600 leading-7" data-i18n="problem3Text">Google Drive の資料を参照し、WingBend 専用の営業・技術回答を返します。</p></article>
       </div>
     </section>
 
     <section class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-10 sm:py-16">
       <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-5 mb-8">
-        <div><p class="text-brand-300 font-black tracking-[.22em] uppercase text-xs" data-i18n="lineEyebrow">製品ライン</p><h2 class="mt-3 text-3xl sm:text-5xl font-black tracking-tight" data-i18n="lineTitle">WingBend / WingBend Plus</h2></div>
-        <p class="max-w-xl text-slate-400 leading-7" data-i18n="lineText">違いと向いている用途を明確にすると、問い合わせから見積までの流れが速くなります。</p>
+        <div><p class="text-brand-600 font-black tracking-[.22em] uppercase text-xs" data-i18n="lineEyebrow">製品ライン</p><h2 class="mt-3 text-3xl sm:text-5xl font-black tracking-tight text-slate-900" data-i18n="lineTitle">WingBend / WingBend Plus</h2></div>
+        <p class="max-w-xl text-slate-600 leading-7" data-i18n="lineText">違いと向いている用途を明確にすると、問い合わせから見積までの流れが速くなります。</p>
       </div>
       <div class="grid lg:grid-cols-2 gap-5">
-        <article class="premium-card p-7 sm:p-8"><div class="flex items-start justify-between gap-4"><div><div class="text-sm font-black text-brand-300 tracking-[.18em]">WB</div><h3 class="mt-2 text-3xl font-black">WingBend</h3></div><span class="rounded-full bg-brand-500/10 border border-brand-400/30 px-4 py-2 text-xs font-black text-brand-100" data-i18n="wbBadge">標準</span></div><ul class="mt-6 space-y-3 text-slate-300"><li class="flex gap-3"><span class="text-brand-300">◆</span><span data-i18n="wbPoint1">傷を抑えた曲げ加工の提案に使いやすい基本ライン</span></li><li class="flex gap-3"><span class="text-brand-300">◆</span><span data-i18n="wbPoint2">初期提案、カタログ案内、比較説明に向いています</span></li><li class="flex gap-3"><span class="text-brand-300">◆</span><span data-i18n="wbPoint3">詳細仕様は公式カタログ確認が必要です</span></li></ul></article>
-        <article class="premium-card p-7 sm:p-8"><div class="flex items-start justify-between gap-4"><div><div class="text-sm font-black text-gold-300 tracking-[.18em]">WBP</div><h3 class="mt-2 text-3xl font-black">WingBend Plus</h3></div><span class="rounded-full bg-gold-500/10 border border-gold-300/30 px-4 py-2 text-xs font-black text-gold-300" data-i18n="wbpBadge">高精度</span></div><ul class="mt-6 space-y-3 text-slate-300"><li class="flex gap-3"><span class="text-gold-300">◆</span><span data-i18n="wbpPoint1">より高品質・高精度を訴求したい案件向け</span></li><li class="flex gap-3"><span class="text-gold-300">◆</span><span data-i18n="wbpPoint2">外観品質が重要な部品の説明に使いやすい</span></li><li class="flex gap-3"><span class="text-gold-300">◆</span><span data-i18n="wbpPoint3">最終選定はワーク形状・干渉・機械能力確認が必要です</span></li></ul></article>
+        <article class="premium-card p-7 sm:p-8"><div class="flex items-start justify-between gap-4"><div><div class="text-sm font-black text-brand-600 tracking-[.18em]">WB</div><h3 class="mt-2 text-3xl font-black text-slate-900">WingBend</h3></div><span class="rounded-full bg-brand-100 border border-brand-200 px-4 py-2 text-xs font-black text-brand-700" data-i18n="wbBadge">標準</span></div><ul class="mt-6 space-y-3 text-slate-600"><li class="flex gap-3"><span class="text-brand-500">◆</span><span data-i18n="wbPoint1">傷を抑えた曲げ加工の提案に使いやすい基本ライン</span></li><li class="flex gap-3"><span class="text-brand-500">◆</span><span data-i18n="wbPoint2">初期提案、カタログ案内、比較説明に向いています</span></li><li class="flex gap-3"><span class="text-brand-500">◆</span><span data-i18n="wbPoint3">詳細仕様は公式カタログ確認が必要です</span></li></ul></article>
+        <article class="premium-card p-7 sm:p-8"><div class="flex items-start justify-between gap-4"><div><div class="text-sm font-black text-gold-500 tracking-[.18em]">WBP</div><h3 class="mt-2 text-3xl font-black text-slate-900">WingBend Plus</h3></div><span class="rounded-full bg-gold-100 border border-gold-200 px-4 py-2 text-xs font-black text-gold-700" data-i18n="wbpBadge">高精度</span></div><ul class="mt-6 space-y-3 text-slate-600"><li class="flex gap-3"><span class="text-gold-500">◆</span><span data-i18n="wbpPoint1">より高品質・高精度を訴求したい案件向け</span></li><li class="flex gap-3"><span class="text-gold-500">◆</span><span data-i18n="wbpPoint2">外観品質が重要な部品の説明に使いやすい</span></li><li class="flex gap-3"><span class="text-gold-500">◆</span><span data-i18n="wbpPoint3">最終選定はワーク形状・干渉・機械能力確認が必要です</span></li></ul></article>
       </div>
     </section>
 
     <section id="tools" class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-10 sm:py-16">
       <div class="premium-card p-6 sm:p-8 lg:p-10">
         <div class="grid lg:grid-cols-[.8fr_1.2fr] gap-8 items-start">
-          <div><p class="text-brand-300 font-black tracking-[.22em] uppercase text-xs" data-i18n="toolsEyebrow">技術ツール</p><h2 class="mt-3 text-3xl sm:text-5xl font-black tracking-tight" data-i18n="toolsTitle">初期確認を速くする</h2><p class="mt-5 text-slate-400 leading-7" data-i18n="toolsText">この計算は営業の初期判断用です。最終選定は公式カタログ、ワーク形状、曲げ長さ、機械能力、干渉条件で確認してください。</p><div class="mt-6 flex flex-wrap gap-3"><button type="button" onclick="openChatWithPrompt(getPrompt('modelCheck'))" class="btn-secondary text-sm" data-i18n="askModel">AIに選定説明を作らせる</button><a href="#resources" class="btn-secondary text-sm" data-i18n="openCatalog">カタログを見る</a></div></div>
+          <div><p class="text-brand-600 font-black tracking-[.22em] uppercase text-xs" data-i18n="toolsEyebrow">技術ツール</p><h2 class="mt-3 text-3xl sm:text-5xl font-black tracking-tight text-slate-900" data-i18n="toolsTitle">初期確認を速くする</h2><p class="mt-5 text-slate-600 leading-7" data-i18n="toolsText">この計算は営業の初期判断用です。最終選定は公式カタログ、ワーク形状、曲げ長さ、機械能力、干渉条件で確認してください。</p><div class="mt-6 flex flex-wrap gap-3"><button type="button" onclick="openChatWithPrompt(getPrompt('modelCheck'))" class="btn-secondary text-sm" data-i18n="askModel">AIに選定説明を作らせる</button><a href="#resources" class="btn-secondary text-sm" data-i18n="openCatalog">カタログを見る</a></div></div>
           <div class="grid md:grid-cols-2 gap-5">
-            <div class="premium-soft p-5"><div class="flex items-center gap-3"><div class="h-11 w-11 rounded-2xl bg-brand-500/15 border border-brand-400/30 flex items-center justify-center">⚙️</div><h3 class="text-xl font-black" data-i18n="modelTitle">型式選定</h3></div><div class="mt-5 space-y-4"><label class="block"><span class="text-xs font-black text-slate-400 tracking-widest uppercase" data-i18n="thicknessLabel">板厚 t（mm）</span><input id="tVal" class="field mt-2 font-black text-brand-100" type="number" value="2.0" step="0.1" min="0" /></label><label class="block"><span class="text-xs font-black text-slate-400 tracking-widest uppercase" data-i18n="radiusLabel">パンチ内R（mm）</span><input id="rVal" class="field mt-2 font-black text-brand-100" type="number" value="1.0" step="0.1" min="0" /></label><div class="grid grid-cols-2 gap-3 pt-2"><div class="rounded-2xl bg-slate-950/70 border border-slate-700 p-4 text-center"><div class="text-[10px] text-slate-500 font-black">WingBend</div><div id="recWB" class="mt-1 text-2xl font-black">WB230</div></div><div class="rounded-2xl bg-brand-500/10 border border-brand-400/30 p-4 text-center"><div class="text-[10px] text-slate-400 font-black">WingBend Plus</div><div id="recWBP" class="mt-1 text-2xl font-black text-brand-200">WBP230</div></div></div></div></div>
-            <div class="premium-soft p-5"><div class="flex items-center gap-3"><div class="h-11 w-11 rounded-2xl bg-emerald-500/15 border border-emerald-400/30 flex items-center justify-center">⚡</div><h3 class="text-xl font-black" data-i18n="tonnageTitle">必要トン数計算</h3></div><div class="mt-5 space-y-4"><label class="block"><span class="text-xs font-black text-slate-400 tracking-widest uppercase" data-i18n="utsLabel">引張強さ（kg/mm²）</span><input id="utsVal" class="field mt-2 font-black text-emerald-100" type="number" value="45" step="1" min="1" /></label><label class="block"><span class="text-xs font-black text-slate-400 tracking-widest uppercase" data-i18n="vLabel">V幅（mm）</span><input id="vVal" class="field mt-2 font-black text-emerald-100" type="number" value="12" step="0.5" min="0.1" /></label><div class="rounded-3xl bg-emerald-500/10 border border-emerald-400/30 p-5 text-center"><div class="text-xs text-emerald-200 font-black tracking-widest uppercase" data-i18n="forceLabel">必要荷重</div><div class="mt-2 text-5xl font-black"><span id="tonnageRes">21.0</span><span class="text-lg text-emerald-300"> Ton/m</span></div></div></div></div>
+            <div class="premium-soft p-5 bg-white shadow-sm"><div class="flex items-center gap-3"><div class="h-11 w-11 rounded-2xl bg-brand-50 border border-brand-100 flex items-center justify-center">⚙️</div><h3 class="text-xl font-black text-slate-900" data-i18n="modelTitle">型式選定</h3></div><div class="mt-5 space-y-4"><label class="block"><span class="text-xs font-black text-slate-500 tracking-widest uppercase" data-i18n="thicknessLabel">板厚 t（mm）</span><input id="tVal" class="field mt-2 font-black text-brand-700" type="number" value="2.0" step="0.1" min="0" /></label><label class="block"><span class="text-xs font-black text-slate-500 tracking-widest uppercase" data-i18n="radiusLabel">パンチ内R（mm）</span><input id="rVal" class="field mt-2 font-black text-brand-700" type="number" value="1.0" step="0.1" min="0" /></label><div class="grid grid-cols-2 gap-3 pt-2"><div class="rounded-2xl bg-slate-50 border border-slate-200 p-4 text-center"><div class="text-[10px] text-slate-500 font-black">WingBend</div><div id="recWB" class="mt-1 text-2xl font-black text-slate-800">WB230</div></div><div class="rounded-2xl bg-brand-50 border border-brand-200 p-4 text-center"><div class="text-[10px] text-brand-600 font-black">WingBend Plus</div><div id="recWBP" class="mt-1 text-2xl font-black text-brand-700">WBP230</div></div></div></div></div>
+            <div class="premium-soft p-5 bg-white shadow-sm"><div class="flex items-center gap-3"><div class="h-11 w-11 rounded-2xl bg-emerald-50 border border-emerald-100 flex items-center justify-center">⚡</div><h3 class="text-xl font-black text-slate-900" data-i18n="tonnageTitle">必要トン数計算</h3></div><div class="mt-5 space-y-4"><label class="block"><span class="text-xs font-black text-slate-500 tracking-widest uppercase" data-i18n="utsLabel">引張強さ（kg/mm²）</span><input id="utsVal" class="field mt-2 font-black text-emerald-700" type="number" value="45" step="1" min="1" /></label><label class="block"><span class="text-xs font-black text-slate-500 tracking-widest uppercase" data-i18n="vLabel">V幅（mm）</span><input id="vVal" class="field mt-2 font-black text-emerald-700" type="number" value="12" step="0.5" min="0.1" /></label><div class="rounded-3xl bg-emerald-50 border border-emerald-200 p-5 text-center"><div class="text-xs text-emerald-600 font-black tracking-widest uppercase" data-i18n="forceLabel">必要荷重</div><div class="mt-2 text-5xl font-black text-emerald-600"><span id="tonnageRes">21.0</span><span class="text-lg text-emerald-500"> Ton/m</span></div></div></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-10">
+      <div class="bg-gradient-to-r from-blue-50 to-white border border-blue-100 rounded-3xl p-8 sm:p-12 shadow-sm">
+        <div class="grid md:grid-cols-2 gap-8 items-center">
+          <div>
+            <h2 class="text-3xl font-black text-slate-900 tracking-tight" data-i18n="testiTitle">Hasil Nyata di Lapangan</h2>
+            <p class="mt-4 text-slate-600 leading-relaxed" data-i18n="testiDesc">Pelanggan kami melaporkan penurunan drastis pada waktu pengerjaan ulang (rework) dan peningkatan kualitas visual produk akhir.</p>
+          </div>
+          <div class="grid grid-cols-2 gap-4">
+            <div class="bg-white p-5 rounded-2xl border border-blue-50 shadow-sm text-center">
+              <div class="text-4xl font-black text-blue-600">-80%</div>
+              <div class="mt-2 text-xs font-bold text-slate-500 uppercase" data-i18n="testiMetric1">Waktu Pemolesan</div>
+            </div>
+            <div class="bg-white p-5 rounded-2xl border border-blue-50 shadow-sm text-center">
+              <div class="text-4xl font-black text-emerald-500">0</div>
+              <div class="mt-2 text-xs font-bold text-slate-500 uppercase" data-i18n="testiMetric2">Goresan Plat</div>
+            </div>
           </div>
         </div>
       </div>
@@ -240,34 +257,56 @@
 
     <section id="cases" class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-10 sm:py-16">
       <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-5 mb-8">
-        <div><p class="text-brand-300 font-black tracking-[.22em] uppercase text-xs" data-i18n="casesEyebrow">加工事例</p><h2 class="mt-3 text-3xl sm:text-5xl font-black tracking-tight" data-i18n="casesTitle">写真で伝える WingBend の価値</h2></div>
-        <p class="max-w-xl text-slate-400 leading-7" data-i18n="casesText">GitHub の assets/images フォルダに写真を入れるだけで、製品写真・取付写真・加工結果を表示できます。</p>
+        <div><p class="text-brand-600 font-black tracking-[.22em] uppercase text-xs" data-i18n="casesEyebrow">加工事例</p><h2 class="mt-3 text-3xl sm:text-5xl font-black tracking-tight text-slate-900" data-i18n="casesTitle">写真で伝える WingBend の価値</h2></div>
+        <p class="max-w-xl text-slate-600 leading-7" data-i18n="casesText">GitHub の assets/images フォルダに写真を入れるだけで、製品写真・取付写真・加工結果を表示できます。</p>
       </div>
       <div class="grid md:grid-cols-3 gap-5">
-        <article class="premium-card overflow-hidden"><div class="media-box rounded-none border-0"><img src="./assets/images/wingbend-product.webp" alt="WingBend product detail" onerror="this.style.display='none'; this.nextElementSibling.classList.remove('hidden');" /><div class="media-placeholder hidden"><div><div class="text-3xl mb-2">📷</div><div data-i18n="casePhProduct">製品写真を入れてください</div><div class="mt-2 text-xs text-slate-500">assets/images/wingbend-product.webp</div></div></div></div><div class="p-5"><h3 class="text-xl font-black" data-i18n="caseProductTitle">製品ディテール</h3><p class="mt-2 text-sm text-slate-400 leading-6" data-i18n="caseProductText">製品形状・質感・精度感を伝える写真。</p></div></article>
-        <article class="premium-card overflow-hidden"><div class="media-box rounded-none border-0"><img src="./assets/images/installation.webp" alt="WingBend installation" onerror="this.style.display='none'; this.nextElementSibling.classList.remove('hidden');" /><div class="media-placeholder hidden"><div><div class="text-3xl mb-2">📷</div><div data-i18n="casePhInstall">取付写真を入れてください</div><div class="mt-2 text-xs text-slate-500">assets/images/installation.webp</div></div></div></div><div class="p-5"><h3 class="text-xl font-black" data-i18n="caseInstallTitle">取付イメージ</h3><p class="mt-2 text-sm text-slate-400 leading-6" data-i18n="caseInstallText">プレスブレーキへの装着イメージを明確にします。</p></div></article>
-        <article class="premium-card overflow-hidden"><div class="media-box rounded-none border-0"><img src="./assets/images/bending-result.webp" alt="WingBend bending result" onerror="this.style.display='none'; this.nextElementSibling.classList.remove('hidden');" /><div class="media-placeholder hidden"><div><div class="text-3xl mb-2">📷</div><div data-i18n="casePhResult">加工結果写真を入れてください</div><div class="mt-2 text-xs text-slate-500">assets/images/bending-result.webp</div></div></div></div><div class="p-5"><h3 class="text-xl font-black" data-i18n="caseResultTitle">加工結果</h3><p class="mt-2 text-sm text-slate-400 leading-6" data-i18n="caseResultText">曲げキズ低減の価値を写真で伝えます。</p></div></article>
+        <article class="premium-card overflow-hidden"><div class="media-box rounded-none border-0"><img src="./assets/images/wingbend-product.webp" alt="WingBend product detail" onerror="this.style.display='none'; this.nextElementSibling.classList.remove('hidden');" /><div class="media-placeholder hidden"><div><div class="text-3xl mb-2">📷</div><div data-i18n="casePhProduct">製品写真を入れてください</div><div class="mt-2 text-xs text-slate-500">assets/images/wingbend-product.webp</div></div></div></div><div class="p-5"><h3 class="text-xl font-black text-slate-900" data-i18n="caseProductTitle">製品ディテール</h3><p class="mt-2 text-sm text-slate-600 leading-6" data-i18n="caseProductText">製品形状・質感・精度感を伝える写真。</p></div></article>
+        <article class="premium-card overflow-hidden"><div class="media-box rounded-none border-0"><img src="./assets/images/installation.webp" alt="WingBend installation" onerror="this.style.display='none'; this.nextElementSibling.classList.remove('hidden');" /><div class="media-placeholder hidden"><div><div class="text-3xl mb-2">📷</div><div data-i18n="casePhInstall">取付写真を入れてください</div><div class="mt-2 text-xs text-slate-500">assets/images/installation.webp</div></div></div></div><div class="p-5"><h3 class="text-xl font-black text-slate-900" data-i18n="caseInstallTitle">取付イメージ</h3><p class="mt-2 text-sm text-slate-600 leading-6" data-i18n="caseInstallText">プレスブレーキへの装着イメージを明確にします。</p></div></article>
+        <article class="premium-card overflow-hidden"><div class="media-box rounded-none border-0"><img src="./assets/images/bending-result.webp" alt="WingBend bending result" onerror="this.style.display='none'; this.nextElementSibling.classList.remove('hidden');" /><div class="media-placeholder hidden"><div><div class="text-3xl mb-2">📷</div><div data-i18n="casePhResult">加工結果写真を入れてください</div><div class="mt-2 text-xs text-slate-500">assets/images/bending-result.webp</div></div></div></div><div class="p-5"><h3 class="text-xl font-black text-slate-900" data-i18n="caseResultTitle">加工結果</h3><p class="mt-2 text-sm text-slate-600 leading-6" data-i18n="caseResultText">曲げキズ低減の価値を写真で伝えます。</p></div></article>
       </div>
     </section>
 
     <section id="resources" class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-10 sm:py-16">
-      <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-5 mb-8"><div><p class="text-brand-300 font-black tracking-[.22em] uppercase text-xs" data-i18n="resEyebrow">営業資料</p><h2 class="mt-3 text-3xl sm:text-5xl font-black tracking-tight" data-i18n="resTitle">資料と営業導線</h2></div><p class="max-w-xl text-slate-400 leading-7" data-i18n="resText">資料リンクはボタン化し、顧客が迷わず次の行動を取れるようにします。</p></div>
+      <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-5 mb-8"><div><p class="text-brand-600 font-black tracking-[.22em] uppercase text-xs" data-i18n="resEyebrow">営業資料</p><h2 class="mt-3 text-3xl sm:text-5xl font-black tracking-tight text-slate-900" data-i18n="resTitle">資料と営業導線</h2></div><p class="max-w-xl text-slate-600 leading-7" data-i18n="resText">資料リンクはボタン化し、顧客が迷わず次の行動を取れるようにします。</p></div>
       <div class="grid md:grid-cols-3 gap-5">
-        <a href="https://drive.google.com/file/d/1oq_8Nkr5QD-O4QDaFemeIMNrnpeP_yWE/view?usp=sharing" target="_blank" rel="noopener" class="premium-card p-6 hover:border-brand-300/60 transition-colors group"><div class="h-12 w-12 rounded-2xl bg-brand-500/15 border border-brand-400/30 flex items-center justify-center text-2xl">📄</div><h3 class="mt-5 text-xl font-black" data-i18n="catalogTitle">カタログ</h3><p class="mt-3 text-sm text-slate-400 leading-6" data-i18n="catalogText">公式カタログ・仕様確認用。</p><div class="mt-5 text-brand-300 text-sm font-black" data-i18n="openResource">開く →</div></a>
-        <a href="https://drive.google.com/drive/folders/1V-a3C5FS5o-5sW4AHUUNKd61_ISsK9KI?usp=sharing" target="_blank" rel="noopener" class="premium-card p-6 hover:border-brand-300/60 transition-colors group"><div class="h-12 w-12 rounded-2xl bg-emerald-500/15 border border-emerald-400/30 flex items-center justify-center text-2xl">📐</div><h3 class="mt-5 text-xl font-black" data-i18n="installTitle">技術・取付資料</h3><p class="mt-3 text-sm text-slate-400 leading-6" data-i18n="installText">図面、取付、確認資料。</p><div class="mt-5 text-brand-300 text-sm font-black" data-i18n="openResource">開く →</div></a>
-        <a href="https://drive.google.com/drive/folders/1DWfyx6NezS0-6MWFlDaERYhdJZXHjhat?usp=drive_link" target="_blank" rel="noopener" class="premium-card p-6 hover:border-brand-300/60 transition-colors group"><div class="h-12 w-12 rounded-2xl bg-gold-500/15 border border-gold-300/30 flex items-center justify-center text-2xl">▶️</div><h3 class="mt-5 text-xl font-black" data-i18n="videoTitle">動画資料</h3><p class="mt-3 text-sm text-slate-400 leading-6" data-i18n="videoText">デモ動画・顧客説明用。</p><div class="mt-5 text-brand-300 text-sm font-black" data-i18n="openResource">開く →</div></a>
+        <a href="https://drive.google.com/file/d/1oq_8Nkr5QD-O4QDaFemeIMNrnpeP_yWE/view?usp=sharing" target="_blank" rel="noopener" class="premium-card p-6 hover:border-brand-400 hover:shadow-md transition-all group"><div class="h-12 w-12 rounded-2xl bg-brand-50 border border-brand-100 flex items-center justify-center text-2xl">📄</div><h3 class="mt-5 text-xl font-black text-slate-900" data-i18n="catalogTitle">カタログ</h3><p class="mt-3 text-sm text-slate-600 leading-6" data-i18n="catalogText">公式カタログ・仕様確認用。</p><div class="mt-5 text-brand-600 text-sm font-black group-hover:translate-x-1 transition-transform" data-i18n="openResource">開く →</div></a>
+        <a href="https://drive.google.com/drive/folders/1V-a3C5FS5o-5sW4AHUUNKd61_ISsK9KI?usp=sharing" target="_blank" rel="noopener" class="premium-card p-6 hover:border-emerald-400 hover:shadow-md transition-all group"><div class="h-12 w-12 rounded-2xl bg-emerald-50 border border-emerald-100 flex items-center justify-center text-2xl">📐</div><h3 class="mt-5 text-xl font-black text-slate-900" data-i18n="installTitle">技術・取付資料</h3><p class="mt-3 text-sm text-slate-600 leading-6" data-i18n="installText">図面、取付、確認資料。</p><div class="mt-5 text-brand-600 text-sm font-black group-hover:translate-x-1 transition-transform" data-i18n="openResource">開く →</div></a>
+        <a href="https://drive.google.com/drive/folders/1DWfyx6NezS0-6MWFlDaERYhdJZXHjhat?usp=drive_link" target="_blank" rel="noopener" class="premium-card p-6 hover:border-gold-400 hover:shadow-md transition-all group"><div class="h-12 w-12 rounded-2xl bg-gold-50 border border-gold-100 flex items-center justify-center text-2xl">▶️</div><h3 class="mt-5 text-xl font-black text-slate-900" data-i18n="videoTitle">動画資料</h3><p class="mt-3 text-sm text-slate-600 leading-6" data-i18n="videoText">デモ動画・顧客説明用。</p><div class="mt-5 text-brand-600 text-sm font-black group-hover:translate-x-1 transition-transform" data-i18n="openResource">開く →</div></a>
+      </div>
+    </section>
+
+    <section class="mx-auto max-w-3xl px-4 sm:px-6 py-10 sm:py-16">
+      <div class="text-center mb-10">
+        <h2 class="text-3xl font-black text-slate-900" data-i18n="faqTitle">Pertanyaan yang Sering Diajukan</h2>
+      </div>
+      <div class="space-y-4">
+        <details class="group bg-white border border-blue-100 rounded-2xl p-5 shadow-sm cursor-pointer hover:border-blue-300 transition-colors">
+          <summary class="font-bold text-slate-800 list-none flex justify-between items-center">
+            <span data-i18n="faqQ1">Apakah WingBend bisa digunakan untuk plat Stainless Steel?</span>
+            <span class="text-blue-500 group-open:rotate-45 transition-transform text-2xl leading-none">+</span>
+          </summary>
+          <p class="mt-4 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-4" data-i18n="faqA1">Ya, sangat direkomendasikan. WingBend sangat efektif untuk material berlapis, stainless steel, dan aluminium untuk mencegah goresan tanpa perlu menggunakan urethane sheet.</p>
+        </details>
+        <details class="group bg-white border border-blue-100 rounded-2xl p-5 shadow-sm cursor-pointer hover:border-blue-300 transition-colors">
+          <summary class="font-bold text-slate-800 list-none flex justify-between items-center">
+            <span data-i18n="faqQ2">Bagaimana cara mengetahui tipe yang cocok untuk mesin saya?</span>
+            <span class="text-blue-500 group-open:rotate-45 transition-transform text-2xl leading-none">+</span>
+          </summary>
+          <p class="mt-4 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-4" data-i18n="faqA2">Anda bisa menggunakan fitur "Model Selector" di atas dengan memasukkan tebal plat dan R dalam, atau hubungi tim teknis kami dengan mengirimkan gambar kerja (drawing).</p>
+        </details>
       </div>
     </section>
 
     <section id="contact" class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-10 sm:py-20">
       <div class="premium-card p-6 sm:p-8 lg:p-10 relative overflow-hidden">
-        <div class="absolute -top-20 right-0 h-64 w-64 rounded-full bg-brand-500 floating-orb"></div>
+        <div class="absolute -top-20 right-0 h-64 w-64 rounded-full bg-brand-100 floating-orb"></div>
         <div class="relative grid lg:grid-cols-[.85fr_1.15fr] gap-8">
-          <div><p class="text-brand-300 font-black tracking-[.22em] uppercase text-xs" data-i18n="contactEyebrow">お問い合わせ</p><h2 class="mt-3 text-3xl sm:text-5xl font-black tracking-tight" data-i18n="contactTitle">お問い合わせ・サポート</h2><p class="mt-5 text-slate-400 leading-7" data-i18n="contactText">営業、技術、資料請求などの内容に合わせて担当部門へ連絡します。</p><div class="mt-7 flex flex-col sm:flex-row lg:flex-col xl:flex-row gap-3"><button type="button" onclick="openChatWithPrompt(getPrompt('salesEmail'))" class="btn-secondary text-sm" data-i18n="makeEmail">AIで営業メール文を作る</button><button type="button" onclick="openChatWithPrompt(getPrompt('customerReply'))" class="btn-secondary text-sm" data-i18n="makeReply">AIで顧客返信文を作る</button></div></div>
-          <form id="contactForm" class="premium-soft p-5 sm:p-6 space-y-4">
-            <div class="grid sm:grid-cols-2 gap-4"><label><span class="text-xs font-black text-slate-400 tracking-widest uppercase" data-i18n="nameLabel">お名前</span><input id="contactName" class="field mt-2" type="text" required data-i18n-placeholder="phName" placeholder="お名前" /></label><label><span class="text-xs font-black text-slate-400 tracking-widest uppercase" data-i18n="emailLabel">メールアドレス</span><input id="contactEmail" class="field mt-2" type="email" required data-i18n-placeholder="phEmail" placeholder="会社メールアドレス" /></label></div>
-            <label><span class="text-xs font-black text-slate-400 tracking-widest uppercase" data-i18n="deptLabel">お問い合わせ種別</span><select id="contactDept" class="field mt-2 cursor-pointer font-bold"><option value="sales" data-i18n="deptSales">営業・価格に関するお問い合わせ</option><option value="technical" data-i18n="deptTechnical">技術・取付に関するお問い合わせ</option><option value="catalog" data-i18n="deptCatalog">カタログ・資料請求</option><option value="general" data-i18n="deptGeneral">その他のお問い合わせ</option></select></label>
-            <label><span class="text-xs font-black text-slate-400 tracking-widest uppercase" data-i18n="messageLabel">お問い合わせ内容</span><textarea id="contactMsg" class="field mt-2 min-h-[140px] resize-y" required data-i18n-placeholder="phMessage" placeholder="お問い合わせ内容をご入力ください"></textarea></label>
+          <div><p class="text-brand-600 font-black tracking-[.22em] uppercase text-xs" data-i18n="contactEyebrow">お問い合わせ</p><h2 class="mt-3 text-3xl sm:text-5xl font-black tracking-tight text-slate-900" data-i18n="contactTitle">お問い合わせ・サポート</h2><p class="mt-5 text-slate-600 leading-7" data-i18n="contactText">営業、技術、資料請求などの内容に合わせて担当部門へ連絡します。</p><div class="mt-7 flex flex-col sm:flex-row lg:flex-col xl:flex-row gap-3"><button type="button" onclick="openChatWithPrompt(getPrompt('salesEmail'))" class="btn-secondary text-sm" data-i18n="makeEmail">AIで営業メール文を作る</button><button type="button" onclick="openChatWithPrompt(getPrompt('customerReply'))" class="btn-secondary text-sm" data-i18n="makeReply">AIで顧客返信文を作る</button></div></div>
+          <form id="contactForm" class="premium-soft p-5 sm:p-6 space-y-4 bg-white shadow-sm border-slate-200">
+            <div class="grid sm:grid-cols-2 gap-4"><label><span class="text-xs font-black text-slate-500 tracking-widest uppercase" data-i18n="nameLabel">お名前</span><input id="contactName" class="field mt-2" type="text" required data-i18n-placeholder="phName" placeholder="お名前" /></label><label><span class="text-xs font-black text-slate-500 tracking-widest uppercase" data-i18n="emailLabel">メールアドレス</span><input id="contactEmail" class="field mt-2" type="email" required data-i18n-placeholder="phEmail" placeholder="会社メールアドレス" /></label></div>
+            <label><span class="text-xs font-black text-slate-500 tracking-widest uppercase" data-i18n="deptLabel">お問い合わせ種別</span><select id="contactDept" class="field mt-2 cursor-pointer font-bold"><option value="sales" data-i18n="deptSales">営業・価格に関するお問い合わせ</option><option value="technical" data-i18n="deptTechnical">技術・取付に関するお問い合わせ</option><option value="catalog" data-i18n="deptCatalog">カタログ・資料請求</option><option value="general" data-i18n="deptGeneral">その他のお問い合わせ</option></select></label>
+            <label><span class="text-xs font-black text-slate-500 tracking-widest uppercase" data-i18n="messageLabel">お問い合わせ内容</span><textarea id="contactMsg" class="field mt-2 min-h-[140px] resize-y" required data-i18n-placeholder="phMessage" placeholder="お問い合わせ内容をご入力ください"></textarea></label>
             <button id="contactSubmit" class="btn-primary w-full" type="submit" data-i18n="contactSend">送信する</button>
             <div id="contactResult" class="hidden rounded-2xl border p-4 text-sm font-bold"></div>
           </form>
@@ -284,24 +323,38 @@
     <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5.5A2.5 2.5 0 013 13.5v-7A2.5 2.5 0 015.5 4h13A2.5 2.5 0 0121 6.5v7a2.5 2.5 0 01-2.5 2.5H15l-3 3-3-3z"/></svg>
   </button>
 
-  <aside id="aiPanel" class="hidden fixed right-3 sm:right-6 bottom-24 z-[80] w-[calc(100vw-1.5rem)] max-w-[430px] h-[620px] max-h-[calc(100vh-7.5rem)] premium-card overflow-hidden flex flex-col" aria-label="AI assistant">
-    <div class="px-5 py-4 bg-ink-950/92 border-b border-slate-800 flex items-center justify-between"><div class="flex items-center gap-3"><div class="h-10 w-10 rounded-2xl bg-gradient-to-br from-brand-600 to-cyan-400 flex items-center justify-center font-black">AI</div><div><div class="font-black text-sm" data-i18n="chatName">営業ウィングベンドアシスタント</div><div class="text-[11px] text-emerald-300 font-black" data-i18n="chatOnline">オンライン / Google Drive資料連携</div></div></div><button id="aiCloseBtn" type="button" class="h-9 w-9 rounded-full hover:bg-white/10 text-slate-300 text-2xl leading-none" aria-label="Close chat">×</button></div>
-    <div id="aiMessages" class="chat-scrollbar flex-1 overflow-y-auto p-4 space-y-3 bg-ink-900/50"><div class="chat-bubble mr-8 bg-slate-800/90 border border-slate-700 rounded-3xl rounded-tl-md p-3.5 text-sm text-slate-100 leading-6" data-i18n="chatWelcome">こんにちは。WingBend の営業・技術説明をサポートします。カタログ、取付、見積説明、顧客返信文などを聞いてください。</div><div class="flex flex-wrap gap-2"><button type="button" class="quick-chip rounded-full bg-brand-500/10 border border-brand-400/30 px-3 py-2 text-xs font-bold text-brand-100 hover:bg-brand-500/20" data-prompt-key="diff" data-i18n="chipDiff">WB/WBPの違い</button><button type="button" class="quick-chip rounded-full bg-brand-500/10 border border-brand-400/30 px-3 py-2 text-xs font-bold text-brand-100 hover:bg-brand-500/20" data-prompt-key="install" data-i18n="chipInstall">取付資料</button><button type="button" class="quick-chip rounded-full bg-brand-500/10 border border-brand-400/30 px-3 py-2 text-xs font-bold text-brand-100 hover:bg-brand-500/20" data-prompt-key="salesEmail" data-i18n="chipEmail">営業メール</button></div></div>
-    <div class="p-3 bg-ink-950/95 border-t border-slate-800"><div class="flex gap-2"><textarea id="aiInput" rows="1" class="field flex-1 resize-none !rounded-2xl min-h-[46px] max-h-28" data-i18n-placeholder="chatPlaceholder" placeholder="質問を入力..."></textarea><button id="aiSendBtn" type="button" class="btn-primary !rounded-2xl px-4 min-w-[56px]" aria-label="Send">➤</button></div><p class="mt-2 text-[10px] text-slate-500" data-i18n="chatNote">AI回答は最終仕様確認の代替ではありません。重要案件は公式カタログ・技術確認を行ってください。</p></div>
+  <aside id="aiPanel" class="hidden fixed right-3 sm:right-6 bottom-24 z-[80] w-[calc(100vw-1.5rem)] max-w-[430px] h-[620px] max-h-[calc(100vh-7.5rem)] bg-white border border-blue-100 shadow-[0_20px_60px_rgba(37,99,235,0.15)] rounded-3xl overflow-hidden flex flex-col" aria-label="AI assistant">
+    <div class="px-5 py-4 bg-blue-50 border-b border-blue-100 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <div class="h-10 w-10 rounded-2xl bg-gradient-to-br from-blue-600 to-cyan-400 flex items-center justify-center font-black text-white shadow-sm">AI</div>
+        <div>
+          <div class="font-black text-sm text-slate-900" data-i18n="chatName">営業ウィングベンドアシスタント</div>
+          <div class="text-[11px] text-emerald-600 font-bold" data-i18n="chatOnline">● Online / Google Drive Ready</div>
+        </div>
+      </div>
+      <button id="aiCloseBtn" type="button" class="h-9 w-9 rounded-full hover:bg-blue-100 text-slate-500 text-2xl leading-none transition-colors" aria-label="Close chat">×</button>
+    </div>
+    
+    <div id="aiMessages" class="chat-scrollbar flex-1 overflow-y-auto p-4 space-y-3 bg-slate-50">
+      <div class="chat-bubble mr-8 bg-white border border-slate-200 shadow-sm rounded-3xl rounded-tl-md p-3.5 text-sm text-slate-700 leading-6" data-i18n="chatWelcome">Halo! Saya asisten virtual WingBend. Ada yang bisa saya bantu terkait spesifikasi, instalasi, atau pertanyaan teknis lainnya?</div>
+      <div class="flex flex-wrap gap-2">
+        <button type="button" class="quick-chip rounded-full bg-blue-50 border border-blue-200 px-3 py-2 text-xs font-bold text-blue-700 hover:bg-blue-100 transition-colors" data-prompt-key="diff" data-i18n="chipDiff">WB vs WBP</button>
+        <button type="button" class="quick-chip rounded-full bg-blue-50 border border-blue-200 px-3 py-2 text-xs font-bold text-blue-700 hover:bg-blue-100 transition-colors" data-prompt-key="install" data-i18n="chipInstall">Cara Instalasi</button>
+        <button type="button" class="quick-chip rounded-full bg-blue-50 border border-blue-200 px-3 py-2 text-xs font-bold text-blue-700 hover:bg-blue-100 transition-colors" data-prompt-key="salesEmail" data-i18n="chipEmail">Email Sales</button>
+      </div>
+    </div>
+  
+    <div class="p-3 bg-white border-t border-slate-100">
+      <div class="flex gap-2">
+        <textarea id="aiInput" rows="1" class="w-full bg-slate-50 border border-slate-200 rounded-2xl px-4 py-3 text-sm text-slate-800 outline-none focus:border-blue-400 focus:bg-white transition-colors resize-none min-h-[46px] max-h-28" data-i18n-placeholder="chatPlaceholder" placeholder="Ketik pertanyaan Anda..."></textarea>
+        <button id="aiSendBtn" type="button" class="btn-primary !rounded-2xl px-4 min-w-[56px] shadow-sm" aria-label="Send">➤</button>
+      </div>
+      <p class="mt-2 text-[10px] text-slate-400 text-center" data-i18n="chatNote">AI dapat membuat kesalahan. Harap periksa spesifikasi akhir padaカタログ.</p>
+    </div>
   </aside>
 
   <script>
-    // ==================================================
-    // GOOGLE APPS SCRIPT WEB APP URL
-    // Deploy ulang backend GS, lalu jika URL berubah, ganti di sini.
-    // ==================================================
     const GAS_WEB_APP_URL = 'https://script.google.com/macros/s/AKfycbxI_jYpuYICkPkePaaOijcSTjnxa7ngQQ-Um2pF_UNr8r52ilPrdmZAtGXPn3GbrVmIcg/exec';
-
-    // GITHUB IMAGE PATHS:
-    // ./assets/images/hero-wingbend.webp
-    // ./assets/images/wingbend-product.webp
-    // ./assets/images/installation.webp
-    // ./assets/images/bending-result.webp
 
     const I18N = {
       ja: {
@@ -314,7 +367,9 @@
         casesEyebrow:'加工事例', casesTitle:'写真で伝える WingBend の価値', casesText:'GitHub の assets/images フォルダに写真を入れるだけで、製品写真・取付写真・加工結果を表示できます。', casePhProduct:'製品写真を入れてください', casePhInstall:'取付写真を入れてください', casePhResult:'加工結果写真を入れてください', caseProductTitle:'製品ディテール', caseProductText:'製品形状・質感・精度感を伝える写真。', caseInstallTitle:'取付イメージ', caseInstallText:'プレスブレーキへの装着イメージを明確にします。', caseResultTitle:'加工結果', caseResultText:'曲げキズ低減の価値を写真で伝えます。',
         resEyebrow:'営業資料', resTitle:'資料と営業導線', resText:'資料リンクはボタン化し、顧客が迷わず次の行動を取れるようにします。', catalogTitle:'カタログ', catalogText:'公式カタログ・仕様確認用。', installTitle:'技術・取付資料', installText:'図面、取付、確認資料。', videoTitle:'動画資料', videoText:'デモ動画・顧客説明用。', openResource:'開く →',
         contactEyebrow:'お問い合わせ', contactTitle:'お問い合わせ・サポート', contactText:'営業、技術、資料請求などの内容に合わせて担当部門へ連絡します。', makeEmail:'AIで営業メール文を作る', makeReply:'AIで顧客返信文を作る', nameLabel:'お名前', emailLabel:'メールアドレス', deptLabel:'お問い合わせ種別', deptSales:'営業・価格に関するお問い合わせ', deptTechnical:'技術・取付に関するお問い合わせ', deptCatalog:'カタログ・資料請求', deptGeneral:'その他のお問い合わせ', messageLabel:'お問い合わせ内容', contactSend:'送信する', phName:'お名前', phEmail:'会社メールアドレス', phMessage:'お問い合わせ内容をご入力ください',
-        chatName:'営業ウィングベンドアシスタント', chatOnline:'オンライン / Google Drive資料連携', chatWelcome:'こんにちは。WingBend の営業・技術説明をサポートします。カタログ、取付、見積説明、顧客返信文などを聞いてください。', chipDiff:'WB/WBPの違い', chipInstall:'取付資料', chipEmail:'営業メール', chatPlaceholder:'質問を入力...', chatNote:'AI回答は最終仕様確認の代替ではありません。重要案件は公式カタログ・技術確認を行ってください。', sending:'送信中...', sent:'送信しました。担当者より連絡します。', networkError:'通信エラーです。Web App URL・デプロイ・権限を確認してください。'
+        chatName:'営業ウィングベンドアシスタント', chatOnline:'● Online / Google Drive Ready', chatWelcome:'こんにちは。WingBend の営業・技術説明をサポートします。カタログ、取付、見積説明、顧客返信文などを聞いてください。', chipDiff:'WB/WBPの違い', chipInstall:'取付資料', chipEmail:'営業メール', chatPlaceholder:'質問を入力...', chatNote:'AI回答は最終仕様確認の代替ではありません。重要案件は公式カタログ・技術確認を行ってください。', sending:'送信中...', sent:'送信しました。担当者より連絡します。', networkError:'通信エラーです。Web App URL・デプロイ・権限を確認してください。',
+        testiTitle:'現場での実績', testiDesc:'お客様からは、二次研磨の時間が大幅に短縮され、最終製品の外観品質が向上したとの報告をいただいております。', testiMetric1:'二次研磨時間', testiMetric2:'曲げキズ',
+        faqTitle:'よくあるご質問 (FAQ)', faqQ1:'ステンレス板にも使用できますか？', faqA1:'はい、推奨しております。ウレタンシートを使用しなくても、表面処理鋼板、ステンレス、アルミの曲げキズ防止に非常に効果的です。', faqQ2:'自社の機械に合う型式をどうやって確認しますか？', faqA2:'上記の「型式選定」ツールに板厚と内Rを入力するか、図面を添えて技術チームにお問い合わせください。'
       },
       en: {
         navSolution:'Solution', navTools:'Engineering Tools', navCases:'Case Photos', navResources:'Resources', navContact:'Contact', navCta:'Talk to us',
@@ -326,7 +381,9 @@
         casesEyebrow:'Case photos', casesTitle:'Show WingBend value with real photos', casesText:'Upload photos to the GitHub assets/images folder to show product, installation, and bending-result images.', casePhProduct:'Upload product photo', casePhInstall:'Upload installation photo', casePhResult:'Upload bending result photo', caseProductTitle:'Product detail', caseProductText:'Show product shape, finish, and precision.', caseInstallTitle:'Installation image', caseInstallText:'Show how WingBend is installed on a press brake.', caseResultTitle:'Bending result', caseResultText:'Show scratch-reduction value visually.',
         resEyebrow:'Sales materials', resTitle:'Resources and sales flow', resText:'Resource links are designed as clear customer actions.', catalogTitle:'Catalog', catalogText:'Official catalog and specification check.', installTitle:'Technical / Installation', installText:'Drawings, installation, and technical checks.', videoTitle:'Videos', videoText:'Demonstration and customer explanation videos.', openResource:'Open →',
         contactEyebrow:'Contact', contactTitle:'Contact & Support', contactText:'Sales, technical, and catalog requests are routed to the appropriate team.', makeEmail:'Create sales email with AI', makeReply:'Create customer reply with AI', nameLabel:'Name', emailLabel:'Email', deptLabel:'Inquiry type', deptSales:'Sales / Pricing Inquiry', deptTechnical:'Technical / Installation Inquiry', deptCatalog:'Catalog / Material Request', deptGeneral:'Other Inquiry', messageLabel:'Message', contactSend:'Send inquiry', phName:'Your name', phEmail:'Corporate email', phMessage:'Please enter your inquiry details',
-        chatName:'WingBend Sales Assistant', chatOnline:'Online / Google Drive Knowledge', chatWelcome:'Hello. I can support WingBend sales and technical explanations, catalogs, installation, quotation explanations, and customer replies.', chipDiff:'WB vs WBP', chipInstall:'Installation', chipEmail:'Sales email', chatPlaceholder:'Type your question...', chatNote:'AI answers do not replace final specification checks. Confirm important cases with the official catalog and technical team.', sending:'Sending...', sent:'Sent. Our team will contact you.', networkError:'Network error. Check the Web App URL, deployment, and permissions.'
+        chatName:'WingBend Sales Assistant', chatOnline:'● Online / Google Drive Ready', chatWelcome:'Hello. I can support WingBend sales and technical explanations, catalogs, installation, quotation explanations, and customer replies.', chipDiff:'WB vs WBP', chipInstall:'Installation', chipEmail:'Sales email', chatPlaceholder:'Type your question...', chatNote:'AI answers do not replace final specification checks. Confirm important cases with the official catalog and technical team.', sending:'Sending...', sent:'Sent. Our team will contact you.', networkError:'Network error. Check the Web App URL, deployment, and permissions.',
+        testiTitle:'Real Field Results', testiDesc:'Our customers report a drastic reduction in rework time and a significant improvement in the final product visual quality.', testiMetric1:'Polishing Time', testiMetric2:'Plate Scratches',
+        faqTitle:'Frequently Asked Questions', faqQ1:'Can WingBend be used for Stainless Steel plates?', faqA1:'Yes, highly recommended. WingBend is very effective for coated materials, stainless steel, and aluminum to prevent scratches without using urethane sheets.', faqQ2:'How do I know which model fits my machine?', faqA2:'You can use the "Model Selector" tool above by entering the plate thickness and inside R, or contact our technical team with your drawing.'
       },
       id: {
         navSolution:'Solusi', navTools:'Tools Teknik', navCases:'Foto Kasus', navResources:'Materi', navContact:'Kontak', navCta:'Konsultasi',
@@ -338,7 +395,9 @@
         casesEyebrow:'Foto kasus', casesTitle:'Tunjukkan nilai WingBend dengan foto asli', casesText:'Upload foto ke folder GitHub assets/images untuk menampilkan foto produk, pemasangan, dan hasil bending.', casePhProduct:'Upload foto produk', casePhInstall:'Upload foto pemasangan', casePhResult:'Upload foto hasil bending', caseProductTitle:'Detail produk', caseProductText:'Tampilkan bentuk, finishing, dan kesan presisi produk.', caseInstallTitle:'Foto pemasangan', caseInstallText:'Tampilkan WingBend terpasang di press brake.', caseResultTitle:'Hasil bending', caseResultText:'Tampilkan nilai anti gores dengan foto hasil aktual.',
         resEyebrow:'Materi sales', resTitle:'Materi dan alur sales', resText:'Link materi dibuat sebagai action yang jelas untuk customer.', catalogTitle:'Katalog', catalogText:'Katalog resmi dan cek spesifikasi.', installTitle:'Teknis / Pemasangan', installText:'Drawing, pemasangan, dan cek teknis.', videoTitle:'Video', videoText:'Video demo dan penjelasan customer.', openResource:'Buka →',
         contactEyebrow:'Kontak', contactTitle:'Kontak & Support', contactText:'Inquiry sales, teknis, dan permintaan katalog diarahkan ke tim yang tepat.', makeEmail:'Buat email sales dengan AI', makeReply:'Buat balasan customer dengan AI', nameLabel:'Nama', emailLabel:'Email', deptLabel:'Jenis inquiry', deptSales:'Pertanyaan sales / harga', deptTechnical:'Pertanyaan teknis / pemasangan', deptCatalog:'Permintaan katalog / materi', deptGeneral:'Inquiry lainnya', messageLabel:'Pesan', contactSend:'Kirim inquiry', phName:'Nama Anda', phEmail:'Email perusahaan', phMessage:'Tulis detail kebutuhan Anda',
-        chatName:'営業ウィングベンドアシスタント', chatOnline:'Online / Google Drive Knowledge', chatWelcome:'Halo. Saya bisa membantu penjelasan sales dan teknis WingBend, katalog, pemasangan, quotation, dan balasan customer.', chipDiff:'WB vs WBP', chipInstall:'Pemasangan', chipEmail:'Email sales', chatPlaceholder:'Ketik pertanyaan...', chatNote:'Jawaban AI bukan pengganti final check. Untuk kasus penting, cek katalog resmi dan konfirmasi teknis.', sending:'Mengirim...', sent:'Terkirim. Tim akan menghubungi Anda.', networkError:'Error koneksi. Cek Web App URL, deployment, dan izin akses.'
+        chatName:'Asisten Sales WingBend', chatOnline:'● Online / Google Drive Ready', chatWelcome:'Halo. Saya bisa membantu penjelasan sales dan teknis WingBend, katalog, pemasangan, quotation, dan balasan customer.', chipDiff:'WB vs WBP', chipInstall:'Pemasangan', chipEmail:'Email sales', chatPlaceholder:'Ketik pertanyaan...', chatNote:'Jawaban AI bukan pengganti final check. Untuk kasus penting, cek katalog resmi dan konfirmasi teknis.', sending:'Mengirim...', sent:'Terkirim. Tim akan menghubungi Anda.', networkError:'Error koneksi. Cek Web App URL, deployment, dan izin akses.',
+        testiTitle:'Hasil Nyata di Lapangan', testiDesc:'Pelanggan kami melaporkan penurunan drastis pada waktu pengerjaan ulang (rework) dan peningkatan kualitas visual produk akhir.', testiMetric1:'Waktu Pemolesan', testiMetric2:'Goresan Plat',
+        faqTitle:'Pertanyaan yang Sering Diajukan', faqQ1:'Apakah WingBend bisa digunakan untuk plat Stainless Steel?', faqA1:'Ya, sangat direkomendasikan. WingBend sangat efektif untuk material berlapis, stainless steel, dan aluminium untuk mencegah goresan tanpa perlu menggunakan urethane sheet.', faqQ2:'Bagaimana cara mengetahui tipe yang cocok untuk mesin saya?', faqA2:'Anda bisa menggunakan fitur "Model Selector" di atas dengan memasukkan tebal plat dan R dalam, atau hubungi tim teknis kami dengan mengirimkan gambar kerja.'
       }
     };
 
@@ -361,7 +420,11 @@
       localStorage.setItem('wingbend_lang', lang);
       document.querySelectorAll('[data-i18n]').forEach(el => {
         const key = el.getAttribute('data-i18n');
-        if (I18N[lang] && I18N[lang][key]) el.textContent = I18N[lang][key];
+        if (I18N[lang] && I18N[lang][key]) {
+          if (el.tagName === 'SPAN' || el.tagName === 'DIV' || el.tagName === 'H1' || el.tagName === 'H2' || el.tagName === 'H3' || el.tagName === 'P' || el.tagName === 'BUTTON' || el.tagName === 'A' || el.tagName === 'OPTION') {
+             el.textContent = I18N[lang][key];
+          }
+        }
       });
       document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
         const key = el.getAttribute('data-i18n-placeholder');
@@ -391,7 +454,7 @@
     function showContactResult(kind, message) {
       const box = $('contactResult');
       box.className = 'rounded-2xl border p-4 text-sm font-bold';
-      box.classList.add(kind === 'success' ? 'border-emerald-400/40' : 'border-red-400/40', kind === 'success' ? 'bg-emerald-500/10' : 'bg-red-500/10', kind === 'success' ? 'text-emerald-100' : 'text-red-100');
+      box.classList.add(kind === 'success' ? 'border-emerald-400' : 'border-red-400', kind === 'success' ? 'bg-emerald-50' : 'bg-red-50', kind === 'success' ? 'text-emerald-700' : 'text-red-700');
       box.textContent = message; box.classList.remove('hidden');
     }
     $('contactForm').addEventListener('submit', async (e) => {
@@ -419,11 +482,13 @@
     document.addEventListener('keydown', (e) => { if (e.key === 'Escape') aiPanel.classList.add('hidden'); });
     function escapeHtml(str) { return String(str || '').replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;').replaceAll("'",'&#039;'); }
     function linkify(text) { return escapeHtml(text).replace(/\[([^\]]+)\]\((https?:\/\/[^\s)]+)\)/g, '<a href="$2" target="_blank" rel="noopener">$1</a>').replace(/(^|[\s>])(https?:\/\/[^\s<]+)/g, '$1<a href="$2" target="_blank" rel="noopener">$2</a>').replace(/\n/g, '<br>'); }
+    
     function appendMsg(role, text, opts = {}) {
       const div = document.createElement('div'); const isUser = role === 'user';
-      div.className = isUser ? 'chat-bubble ml-8 bg-brand-600 rounded-3xl rounded-tr-md p-3.5 text-sm text-white leading-6' : 'chat-bubble mr-8 bg-slate-800/90 border border-slate-700 rounded-3xl rounded-tl-md p-3.5 text-sm text-slate-100 leading-6';
+      div.className = isUser ? 'chat-bubble ml-8 bg-blue-600 shadow-sm rounded-3xl rounded-tr-md p-3.5 text-sm text-white leading-6' : 'chat-bubble mr-8 bg-white border border-slate-200 shadow-sm rounded-3xl rounded-tl-md p-3.5 text-sm text-slate-700 leading-6';
       if (opts.id) div.id = opts.id; div.innerHTML = opts.raw ? text : linkify(text); aiMessages.appendChild(div); aiMessages.scrollTop = aiMessages.scrollHeight; return div;
     }
+    
     function openChatWithPrompt(prompt) { aiPanel.classList.remove('hidden'); aiInput.value = prompt; aiInput.focus(); }
     window.openChatWithPrompt = openChatWithPrompt; window.getPrompt = getPrompt;
     async function sendChat() {
